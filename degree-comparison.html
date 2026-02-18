@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BS vs MS Mechanical Engineering — Florida Poly</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,wght@0,300;0,500;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #13161e;
+    --border: #1e2330;
+    --accent: #e8b84b;
+    --accent2: #4b9de8;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --bs-color: #4b9de8;
+    --ms-color: #e8b84b;
+    --green: #4be8a0;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Grid background */
+  body::before {
+    content:'';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(74,157,232,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74,157,232,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  header {
+    padding: 48px 32px 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  h1 span.bs { color: var(--bs-color); }
+  h1 span.ms { color: var(--ms-color); }
+
+  .subtitle {
+    font-size: 15px;
+    color: var(--muted);
+    margin-top: 10px;
+    font-weight: 300;
+  }
+
+  /* ─── Main layout ─── */
+  .main {
+    max-width: 1100px;
+    margin: 40px auto 60px;
+    padding: 0 32px;
+    display: grid;
+    gap: 24px;
+  }
+
+  /* ─── Salary Hero ─── */
+  .salary-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 640px) {
+    .salary-hero { grid-template-columns: 1fr; }
+    .table-row { flex-direction: column; gap: 6px; }
+  }
+
+  .salary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+
+  .salary-card:hover { transform: translateY(-2px); }
+
+  .salary-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .salary-card.bs::after { background: var(--bs-color); }
+  .salary-card.ms::after { background: var(--ms-color); }
+
+  .degree-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+  .bs .degree-badge { background: rgba(75,157,232,0.15); color: var(--bs-color); }
+  .ms .degree-badge { background: rgba(232,184,75,0.15); color: var(--ms-color); }
+
+  .salary-number {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .bs .salary-number { color: var(--bs-color); }
+  .ms .salary-number { color: var(--ms-color); }
+
+  .salary-label { font-size: 13px; color: var(--muted); }
+
+  .salary-sub {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .salary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: var(--muted);
+  }
+  .salary-row span:last-child { color: var(--text); font-weight: 500; }
+
+  /* ─── Timeline / bar ─── */
+  .timeline-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+  }
+
+  .section-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  /* ─── Earnings chart ─── */
+  .earnings-chart {
+    margin-top: 16px;
+  }
+
+  .chart-year {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 13px;
+  }
+
+  .chart-label {
+    width: 80px;
+    color: var(--muted);
+    flex-shrink: 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+  }
+
+  .bar-wrap {
+    flex: 1;
+    display: flex;
+    gap: 6px;
+    flex-direction: column;
+  }
+
+  .bar-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 20px;
+  }
+
+  .bar {
+    height: 20px;
+    border-radius: 4px;
+    position: relative;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 4px;
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+  }
+
+  .bar.bs-bar { background: rgba(75,157,232,0.25); border: 1px solid rgba(75,157,232,0.4); }
+  .bar.ms-bar { background: rgba(232,184,75,0.25); border: 1px solid rgba(232,184,75,0.4); }
+
+  .bar-val {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    white-space: nowrap;
+    margin-left: 6px;
+  }
+  .bs-bar .bar-val { color: var(--bs-color); }
+  .ms-bar .bar-val { color: var(--ms-color); }
+
+  /* ─── Two column comparison ─── */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media(max-width: 640px){ .compare-grid { grid-template-columns: 1fr; } }
+
+  .compare-col {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+  }
+
+  .compare-col::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 12px 12px 0 0;
+  }
+  .compare-col.bs-col::after { background: var(--bs-color); }
+  .compare-col.ms-col::after { background: var(--ms-color); }
+
+  .col-header {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .bs-col .col-header { color: var(--bs-color); }
+  .ms-col .col-header { color: var(--ms-color); }
+
+  .item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .bs-col .dot { background: var(--bs-color); }
+  .ms-col .dot { background: var(--ms-color); }
+
+  /* ─── Table ─── */
+  .table-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    overflow: hidden;
+  }
+
+  .table-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+
+  .table-row:last-child { border-bottom: none; }
+
+  .row-topic {
+    width: 160px;
+    flex-shrink: 0;
+    font-weight: 500;
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding-top: 2px;
+  }
+
+  .row-bs, .row-ms {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .row-bs { background: rgba(75,157,232,0.07); border: 1px solid rgba(75,157,232,0.15); }
+  .row-ms { background: rgba(232,184,75,0.07); border: 1px solid rgba(232,184,75,0.15); }
+
+  /* ─── Florida Poly specific ─── */
+  .poly-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+  }
+
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .course-chip {
+    background: rgba(232,184,75,0.08);
+    border: 1px solid rgba(232,184,75,0.2);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .course-chip .course-code {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--ms-color);
+    margin-bottom: 3px;
+  }
+
+  /* ─── Verdict ─── */
+  .verdict {
+    background: linear-gradient(135deg, rgba(232,184,75,0.08) 0%, rgba(75,157,232,0.08) 100%);
+    border: 1px solid rgba(232,184,75,0.25);
+    border-radius: 12px;
+    padding: 28px;
+  }
+
+  .verdict h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+
+  .verdict-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #c8cad4;
+  }
+
+  .highlight { color: var(--accent); font-weight: 600; }
+  .highlight-b { color: var(--bs-color); font-weight: 600; }
+
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid;
+  }
+
+  .tag.green { color: var(--green); border-color: rgba(75,232,160,0.3); background: rgba(75,232,160,0.07); }
+  .tag.yellow { color: var(--ms-color); border-color: rgba(232,184,75,0.3); background: rgba(232,184,75,0.07); }
+  .tag.blue { color: var(--bs-color); border-color: rgba(75,157,232,0.3); background: rgba(75,157,232,0.07); }
+
+  /* ─── Toggle ─── */
+  .toggle-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .toggle-btn {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    transition: all 0.15s;
+  }
+
+  .toggle-btn.active-bs {
+    border-color: var(--bs-color);
+    color: var(--bs-color);
+    background: rgba(75,157,232,0.1);
+  }
+
+  .toggle-btn.active-ms {
+    border-color: var(--ms-color);
+    color: var(--ms-color);
+    background: rgba(232,184,75,0.1);
+  }
+
+  /* Animate bars on load */
+  .bar { width: 0; }
+
+  .path-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    margin-right: 8px;
+  }
+
+  .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+
+  .pill {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.06);
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">// Neil Hasenstaub — Florida Polytechnic University</div>
+  <h1><span class="bs">BS</span> vs <span class="ms">MS</span><br>Mechanical Engineering</h1>
+  <p class="subtitle">Short & long-term comparison · Salary, career paths, cost, and time-to-value</p>
+</header>
+
+<div class="main">
+
+  <!-- ─── Salary Hero ─── -->
+  <div class="salary-hero">
+    <div class="salary-card bs">
+      <div class="degree-badge">BS / BSME</div>
+      <div class="salary-number">$78.7k</div>
+      <div class="salary-label">Avg. starting salary (NACE 2025)</div>
+      <div class="salary-sub">
+        <div class="salary-row"><span>Florida Poly median</span><span>$62,595</span></div>
+        <div class="salary-row"><span>National ME median</span><span>$102,320</span></div>
+        <div class="salary-row"><span>Time to complete</span><span>4 years</span></div>
+        <div class="salary-row"><span>Credits required</span><span>~128 cr.</span></div>
+      </div>
+    </div>
+    <div class="salary-card ms">
+      <div class="degree-badge">MS / MSME</div>
+      <div class="salary-number">$94.1k</div>
+      <div class="salary-label">Avg. starting salary (NACE 2025)</div>
+      <div class="salary-sub">
+        <div class="salary-row"><span>Premium over BS</span><span style="color:var(--green)">+15%–25%</span></div>
+        <div class="salary-row"><span>Senior / specialist</span><span>$110k–$140k+</span></div>
+        <div class="salary-row"><span>Add'l time (4+1)</span><span>+1 year</span></div>
+        <div class="salary-row"><span>Credits required</span><span>30 cr. grad</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Earnings over career ─── -->
+  <div class="timeline-section">
+    <div class="section-title">// Cumulative earnings trajectory · estimated</div>
+    <div class="toggle-row">
+      <span style="font-size:12px;color:var(--muted);font-family:'Space Mono',monospace">SHOW:</span>
+      <button class="toggle-btn active-bs" onclick="toggleBar('bs')">BS</button>
+      <button class="toggle-btn active-ms" onclick="toggleBar('ms')">MS</button>
+    </div>
+    <div class="earnings-chart" id="earningsChart"></div>
+    <p style="font-size:11px;color:var(--muted);margin-top:12px;font-family:'Space Mono',monospace">
+      * Estimates based on NACE 2025 starting salaries + BLS growth data. Individual results vary.
+    </p>
+  </div>
+
+  <!-- ─── Short vs Long term ─── -->
+  <div class="compare-grid">
+    <div class="compare-col bs-col">
+      <div class="col-header">BS — SHORT TERM (0–3 yrs)</div>
+      <div class="item"><div class="dot"></div><div>Enter workforce immediately — start earning ~$62–79k right after graduation</div></div>
+      <div class="item"><div class="dot"></div><div>Less student debt; no additional tuition investment</div></div>
+      <div class="item"><div class="dot"></div><div>Build 3–4 years of real industry experience while peers are still in school</div></div>
+      <div class="item"><div class="dot"></div><div>Eligible for PE licensure track sooner (EIT exam right after graduation)</div></div>
+      <div class="item"><div class="dot"></div><div>Strong portfolio (mechatronics, CAD, FEA) makes you competitive for design roles</div></div>
+
+      <div class="col-header" style="margin-top:24px;">BS — LONG TERM (5–15 yrs)</div>
+      <div class="item"><div class="dot"></div><div>May hit a ceiling moving into senior/principal engineering or R&D roles</div></div>
+      <div class="item"><div class="dot"></div><div>Management tracks available but often favor MS/MBA holders in larger firms</div></div>
+      <div class="item"><div class="dot"></div><div>Can pursue MS part-time later — more options open with industry experience</div></div>
+      <div class="item"><div class="dot"></div><div>Your hands-on portfolio already differentiates you from many peers</div></div>
+    </div>
+    <div class="compare-col ms-col">
+      <div class="col-header">MS — SHORT TERM (0–3 yrs)</div>
+      <div class="item"><div class="dot"></div><div>Higher starting salary (~$94k avg) — closes the gap with BS faster than expected</div></div>
+      <div class="item"><div class="dot"></div><div>Florida Poly's 4+1 program lets you complete in just one extra year</div></div>
+      <div class="item"><div class="dot"></div><div>Access to graduate assistantships — can offset tuition costs significantly</div></div>
+      <div class="item"><div class="dot"></div><div>Deepen specialization: Mechanics (vibrations, FEA, materials) OR Thermal Fluids</div></div>
+      <div class="item"><div class="dot"></div><div>Thesis pathway builds research credibility — opens R&D, defense, and aerospace doors</div></div>
+
+      <div class="col-header" style="margin-top:24px;">MS — LONG TERM (5–15 yrs)</div>
+      <div class="item"><div class="dot"></div><div>Faster path to $110k–$140k+ senior/specialist/lead roles</div></div>
+      <div class="item"><div class="dot"></div><div>Required credential at top defense, aerospace, and national lab employers</div></div>
+      <div class="item"><div class="dot"></div><div>PhD pathway available — academic and research careers remain open</div></div>
+      <div class="item"><div class="dot"></div><div>Engineering leadership roles average $179k–$322k (Glassdoor) — MS is often the floor</div></div>
+    </div>
+  </div>
+
+  <!-- ─── Head-to-head comparison table ─── -->
+  <div class="table-section">
+    <div class="section-title">// Head-to-head · key decision factors</div>
+
+    <div class="table-row">
+      <div class="row-topic">Time Cost</div>
+      <div class="row-bs">Done in 4 years — enter market immediately</div>
+      <div class="row-ms">+1 year via 4+1 program at Florida Poly (or 1.5–2 yrs standard track)</div>
+    </div>
+    <div class="table-row">
+      <div class="row-topic">Financial Cost</div>
+      <div class="row-bs">No additional tuition. Opportunity cost = 0</div>
+      <div class="row-ms">~1 extra year tuition, but grad assistantships + higher salary ROI within ~3–4 years</div>
+    </div>
+    <div class="table-row">
+      <div class="row-topic">Starting Salary</div>
+      <div class="row-bs">~$78,731 national avg (NACE 2025); ~$62k Florida Poly median</div>
+      <div class="row-ms">~$94,086 national avg (NACE 2025) — roughly 20% higher at career start</div>
+    </div>
+    <div class="table-row">
+      <div class="row-topic">Career Ceiling</div>
+      <div class="row-bs">Strong for design, manufacturing, mechatronics; ceiling may appear at principal/R&D level</div>
+      <div class="row-ms">Unlocks senior, lead, principal, R&D, and management tracks earlier</div>
+    </div>
+    <div class="table-row">
+      <div class="row-topic">Your Profile Fit</div>
+      <div class="row-bs">Your robotics/mechatronics + CAD work is compelling — BS is enough for strong design roles</div>
+      <div class="row-ms">Thesis + advanced dynamics/FEA would reinforce robotics/autonomous systems strengths</div>
+    </div>
+    <div class="table-row">
+      <div class="row-topic">Industry Access</div>
+      <div class="row-bs">Manufacturing, automotive, consumer products, startups, mechanical design roles</div>
+      <div class="row-ms">Aerospace, defense (Raytheon, L3 avg $89–121k), national labs, R&D divisions, academia</div>
+    </div>
+    <div class="table-row">
+      <div class="row-topic">Risk Profile</div>
+      <div class="row-bs">Lower risk — start earning sooner, gain experience, decide on grad school with full info</div>
+      <div class="row-ms">Low-risk if doing 4+1 — you're already enrolled, network is built, cost is marginal</div>
+    </div>
+    <div class="table-row">
+      <div class="row-topic">PE Licensure</div>
+      <div class="row-bs">Can take FE exam immediately post-grad; 4 years experience → PE</div>
+      <div class="row-ms">Same path, just starts 1 year later</div>
+    </div>
+  </div>
+
+  <!-- ─── Florida Poly MSME specifics ─── -->
+  <div class="poly-section">
+    <div class="section-title">// Florida Poly MSME — 4+1 Program Details</div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:16px;line-height:1.6;">
+      Florida Poly offers a <span style="color:var(--accent);font-weight:600;">4+1 accelerated master's pathway</span> — you can begin graduate coursework as a senior undergrad and finish in just one additional year. The program has two tracks:
+    </p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;" class="tracks-grid">
+      <div style="background:rgba(232,184,75,0.06);border:1px solid rgba(232,184,75,0.2);border-radius:8px;padding:16px;">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--ms-color);margin-bottom:10px;">COURSE-ONLY TRACK · 30 CREDITS</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6;">Faster completion (3 semesters). Good for industry-bound students. No thesis required. Includes Engineering Management electives.</div>
+      </div>
+      <div style="background:rgba(75,232,160,0.05);border:1px solid rgba(75,232,160,0.2);border-radius:8px;padding:16px;">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--green);margin-bottom:10px;">THESIS TRACK · 30 CREDITS</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6;">Extends to 4–5 semesters. Best for R&D, defense, or PhD path. Includes original research. Strongest differentiator on resume.</div>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:20px;">// Key graduate courses relevant to your robotics/mechatronics focus</div>
+    <div class="course-grid">
+      <div class="course-chip">
+        <span class="course-code">EML 5210</span>
+        Intermediate Dynamics & Modern Controls
+      </div>
+      <div class="course-chip">
+        <span class="course-code">EML 5554</span>
+        Reverse Engineering & Design for Manufacturing
+      </div>
+      <div class="course-chip">
+        <span class="course-code">EML 4225</span>
+        Introduction to Vibrations & Controls
+      </div>
+      <div class="course-chip">
+        <span class="course-code">EML 4541</span>
+        Fatigue & Fracture Mechanics
+      </div>
+      <div class="course-chip">
+        <span class="course-code">EGN 5445</span>
+        Design of Experiments & Optimization
+      </div>
+      <div class="course-chip">
+        <span class="course-code">EGN 5470</span>
+        Advanced Engineering Math (required)
+      </div>
+      <div class="course-chip">
+        <span class="course-code">EGN 5626</span>
+        Engineering Project Management
+      </div>
+      <div class="course-chip">
+        <span class="course-code">EML 5040</span>
+        Numerical Methods & Simulation
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Verdict ─── -->
+  <div class="verdict">
+    <div class="section-title">// Bottom line — for Neil specifically</div>
+    <h2>The 4+1 MS is the high-value move — <span class="highlight">if R&D or robotics is the goal.</span></h2>
+    <p class="verdict-text">
+      Your portfolio is already strong — autonomous vehicles, Stirling engines, four-bar mechanisms, and documented FEA work puts you above average for a 3rd-year student. A <span class="highlight">BS alone is absolutely a viable path</span> — especially to get into mechatronics, design, or manufacturing roles at companies in Florida's growing tech and defense corridors.
+    </p>
+    <br>
+    <p class="verdict-text">
+      That said, <span class="highlight">Florida Poly's 4+1 program changes the math</span>. For just one extra year (with assistantship possibilities offsetting cost), you pick up an ~$15k annual salary advantage at career start, unlock defense and aerospace employers (Lockheed, Raytheon, L3 all pay MS grads $10–30k more), and build research credibility that your robotics/autonomous systems work is perfectly positioned to leverage. The <span class="highlight-b">EML 5210 Modern Controls</span> and <span class="highlight-b">EML 5040 Numerical Simulation</span> courses directly extend your AV capstone work.
+    </p>
+    <br>
+    <p class="verdict-text">
+      <strong style="color:var(--text)">Recommended path:</strong> Secure an internship in your 3rd year (you're actively seeking one — great), use that experience to decide between industry-first or 4+1. If you land a strong internship with a defense or robotics firm and they signal interest in hiring, BS → industry → MS part-time is equally valid. If no clear hire signal, the 4+1 is low-risk and high-return.
+    </p>
+    <div class="tag-row">
+      <div class="tag green">4+1 ROI breaks even ~3 yrs post-grad</div>
+      <div class="tag yellow">MS unlocks aerospace & defense</div>
+      <div class="tag blue">Your portfolio is already strong for BS roles</div>
+      <div class="tag green">Robotics + controls = thesis-ready niche</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const MAX_BAR_WIDTH = 100; // percent of container
+
+  const data = [
+    { year: 'Year 1',  bs: 78,  ms: 0,   bsLabel: '$78k',  msLabel: 'in school' },
+    { year: 'Year 2',  bs: 80,  ms: 0,   bsLabel: '$80k',  msLabel: 'in school (4+1)' },
+    { year: 'Year 3',  bs: 84,  ms: 94,  bsLabel: '$84k',  msLabel: '$94k (MS starts)' },
+    { year: 'Year 5',  bs: 90,  ms: 102, bsLabel: '$90k',  msLabel: '$102k' },
+    { year: 'Year 8',  bs: 100, ms: 118, bsLabel: '$100k', msLabel: '$118k' },
+    { year: 'Year 12', bs: 112, ms: 138, bsLabel: '$112k', msLabel: '$138k' },
+  ];
+
+  const maxVal = 140;
+  let showBS = true;
+  let showMS = true;
+
+  function toggleBar(type) {
+    if (type === 'bs') {
+      showBS = !showBS;
+      document.querySelectorAll('.toggle-btn')[0].classList.toggle('active-bs', showBS);
+    } else {
+      showMS = !showMS;
+      document.querySelectorAll('.toggle-btn')[1].classList.toggle('active-ms', showMS);
+    }
+    renderChart();
+  }
+
+  function renderChart() {
+    const container = document.getElementById('earningsChart');
+    container.innerHTML = '';
+
+    data.forEach(d => {
+      const row = document.createElement('div');
+      row.className = 'chart-year';
+
+      row.innerHTML = `<div class="chart-label">${d.year}</div>`;
+
+      const barWrap = document.createElement('div');
+      barWrap.className = 'bar-wrap';
+
+      if (showBS) {
+        const bsLine = document.createElement('div');
+        bsLine.className = 'bar-line';
+        bsLine.innerHTML = `
+          <div class="bar bs-bar" style="width:0%" data-target="${(d.bs/maxVal*100).toFixed(1)}">
+            <span class="bar-val">${d.bsLabel}</span>
+          </div>
+        `;
+        barWrap.appendChild(bsLine);
+      }
+
+      if (showMS && d.ms > 0) {
+        const msLine = document.createElement('div');
+        msLine.className = 'bar-line';
+        msLine.innerHTML = `
+          <div class="bar ms-bar" style="width:0%" data-target="${(d.ms/maxVal*100).toFixed(1)}">
+            <span class="bar-val">${d.msLabel}</span>
+          </div>
+        `;
+        barWrap.appendChild(msLine);
+      } else if (showMS && d.ms === 0) {
+        const msLine = document.createElement('div');
+        msLine.className = 'bar-line';
+        msLine.innerHTML = `<span style="font-size:11px;color:var(--muted);font-family:'Space Mono',monospace;padding:2px 0;">${d.msLabel}</span>`;
+        barWrap.appendChild(msLine);
+      }
+
+      row.appendChild(barWrap);
+      container.appendChild(row);
+    });
+
+    // Animate bars
+    setTimeout(() => {
+      document.querySelectorAll('.bar[data-target]').forEach(bar => {
+        bar.style.width = bar.dataset.target + '%';
+      });
+    }, 50);
+  }
+
+  renderChart();
+</script>
+
+</body>
+</html>
