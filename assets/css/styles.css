@@ -380,8 +380,6 @@ h1{
   gap: 10px;
   color: rgba(255,255,255,0.70);
 }
-/* Instructor Feedback Styling */
-
 .project-feedback {
   display: flex;
   background: #f6f8fb;
@@ -410,3 +408,4 @@ h1{
   color: #6b7280;
   margin: 0;
 }
+
