@@ -142,7 +142,8 @@ h1{
   background: transparent;
   border-color: rgba(167,180,195,0.25);
   color: rgba(255,255,255,0.88);
- } 
+}
+  
 .btn--accent{
   border-color: rgba(176,149,222,0.35);
   background: linear-gradient(
@@ -447,5 +448,6 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
