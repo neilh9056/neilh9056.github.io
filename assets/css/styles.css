@@ -133,6 +133,11 @@ h1{
   color: var(--text);
   font-weight: 700;
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
 }
 .btn--primary{
   border-color: rgba(176,149,222,0.35);
@@ -447,6 +452,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
