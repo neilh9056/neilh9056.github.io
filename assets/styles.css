@@ -64,8 +64,8 @@ a:hover{ opacity: 0.92; }
 
 .nav{
   display:flex;
-  gap: 10px;
   align-items:center;
+  gap: 10px;
 }
 .nav a{
   padding: 8px 10px;
@@ -166,7 +166,36 @@ h1{
   border-radius: 12px;
   font-weight: 700;
 }
+/* Header nav button refinement */
+.navBtn{
+  padding: 9px 12px;              /* slightly smaller than main CTAs */
+  border-radius: 12px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  box-shadow: none;               /* prevents “chunky” look in header */
+}
 
+/* Make nav buttons feel “glass + gradient”, not heavy */
+.navBtn.btn--primary{
+  border: 1px solid rgba(176,149,222,0.22);
+  background: linear-gradient(135deg,
+    rgba(80,29,131,0.60),
+    rgba(176,149,222,0.35)
+  );
+}
+
+/* Premium glow upgrade (subtle) */
+.navBtn.btn--primary:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(80,29,131,0.28);
+  filter: brightness(1.06);
+}
+
+/* Active click */
+.navBtn.btn--primary:active{
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
 .quickFacts{
   margin-top: 16px;
   display:grid;
@@ -398,6 +427,7 @@ h1{
   gap: 10px;
   color: rgba(255,255,255,0.70);
 }
+
 
 
 
