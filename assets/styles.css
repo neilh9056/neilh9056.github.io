@@ -135,8 +135,15 @@ h1{
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 .btn--primary{
-  border-color: rgba(176,149,222,0.35);
-  background: linear-gradient(135deg, rgba(80,29,131,0.95), rgba(176,149,222,0.80));
+  background: linear-gradient(135deg, rgba(80,29,131,0.95), rgba(176,149,222,0.85));
+  border: none;
+  box-shadow: 0 8px 22px rgba(80,29,131,0.35);
+  transition: all 0.25s ease;
+}
+
+.btn--primary:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(176,149,222,0.45);
 }
 .btn--ghost{
   background: transparent;
@@ -391,5 +398,6 @@ h1{
   gap: 10px;
   color: rgba(255,255,255,0.70);
 }
+
 
 
