@@ -73,9 +73,9 @@ a:hover{ opacity: 0.92; }
   grid-template-columns: 1.1fr 0.9fr;
   gap: 26px;
   align-items: stretch;
-  }
+}
 
-}.hero__copy,
+.hero__copy,
 .hero__card{
   display:flex;
   flex-direction: column;
@@ -478,6 +478,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
