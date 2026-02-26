@@ -72,7 +72,7 @@ a:hover{ opacity: 0.92; }
   display:grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 26px;
-  align-items: start;
+  align-items: stretch;
 }
 @media (max-width: 960px){
   .hero__grid{ grid-template-columns: 1fr; }
@@ -462,6 +462,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
