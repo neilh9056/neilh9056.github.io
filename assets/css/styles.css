@@ -369,8 +369,7 @@ h1{
 }
 
 /* QR clickable wrapper */
-.qrLink{
-  display:inline-block;
+qrLink{ display:block; color:inherit; }
 }
 
 /* QR container */
@@ -504,6 +503,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
