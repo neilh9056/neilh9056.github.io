@@ -79,6 +79,11 @@ a:hover{ opacity: 0.92; }
   display:flex;
   flex-direction: column;
 }
+
+/* Push the LinkedIn card to the bottom of the left column */
+.linkedinCard{
+  margin-top: auto;
+}
 @media (max-width: 960px){
   .hero__grid{ grid-template-columns: 1fr; }
   .nav{ display:none; }
@@ -477,6 +482,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
