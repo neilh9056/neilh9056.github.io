@@ -368,6 +368,12 @@ h1{
   margin-bottom: 8px;
 }
 
+/* QR clickable wrapper */
+.qrLink{
+  display:inline-block;
+}
+
+/* QR container */
 .qrWrap{
   border: 1px dashed rgba(176,149,222,0.45);
   border-radius: 16px;
@@ -375,6 +381,22 @@ h1{
   background: rgba(80,29,131,0.10);
   display:grid;
   place-items:center;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.qrLink:hover .qrWrap{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(176,149,222,0.35);
+}
+
+/* QR image */
+.qrWrap img{
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 .qrWrap img{
   width: 220px;
@@ -482,6 +504,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
