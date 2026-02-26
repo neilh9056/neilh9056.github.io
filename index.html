@@ -28,103 +28,86 @@
 
  <main id="top">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero__grid">
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero__grid">
 
-      <!-- LEFT SIDE -->
-<div class="hero__copy">
-  <p class="pill">Mechanical Engineering • 3rd Year • Seeking a Summer 2026 Internship</p>
+    <!-- LEFT SIDE -->
+    <div class="hero__copy">
+      <p class="pill">Mechanical Engineering • 3rd Year • Seeking a Summer 2026 Internship</p>
+      <h1>Neil Hasenstaub</h1>
 
-  <h1>Neil Hasenstaub</h1>
+      <p class="subtitle">
+        Hands-on mechanical engineering student focused on CAD and mechanisms,
+        with experience building functional prototypes, performing analysis,
+        and delivering clear technical documentation.
+      </p>
 
-  <p class="subtitle">
-    Hands-on mechanical engineering student focused on CAD and mechanisms,
-    with experience building functional prototypes, performing analysis,
-    and delivering clear technical documentation.
-  </p>
+      <div class="ctaRow">
+        <a class="btn btn--primary" href="#projects">View Projects</a>
+        <a class="btn btn--accent" href="assets/resume/Neil-Resume.pdf" download>Download Resume (PDF)</a>
+      </div>
 
-  <div class="ctaRow">
-    <a class="btn btn--primary" href="#projects">View Projects</a>
-    <a class="btn btn--accent" href="assets/resume/Neil-Resume.pdf" download>
-      Download Resume (PDF)
-    </a>
-  </div>
+      <div class="quickFacts">
+        <div class="fact">
+          <div class="fact__k">Tools</div>
+          <div class="fact__v">SolidWorks • MATLAB • C# + Java • C/C++ (Arduino) • Excel • FEA • GD&amp;T</div>
+        </div>
 
-  <!-- Tools + Interests (ONLY ONCE) -->
-  <div class="quickFacts">
-  <div class="fact">
-    <div class="fact__k">Tools</div>
-    <div class="fact__v">
-      SolidWorks • MATLAB • C# + Java • C/C++ (Arduino) • Excel • FEA • GD&amp;T
-    </div>
-  </div>
-
-  <div class="fact">
-    <div class="fact__k">Interests</div>
-    <div class="fact__v">
-      Vehicles • Mechanisms • CAD • Design for Manufacture • Prototyping
-    </div>
-  </div>
-</div>
-
-  <!-- LinkedIn (ONLY ONCE) -->
-  <div class="card linkedinCard">
-    <h3>LinkedIn</h3>
-    <p class="muted small">CLICK OR SCAN TO VIEW MY LINKEDIN PROFILE.</p>
-    <a href="http://linkedin.com/in/neil-hasenstaub-04b9753a2"
-   target="_blank"
-   rel="noopener"
-   class="qrLink"
-   aria-label="Open Neil Hasenstaub LinkedIn profile">
-
-  <div class="qrWrap">
-    <img src="assets/img/linkedin-qr.png" alt="LinkedIn QR code">
-  </div>
-
-</a>
-
-      <!-- RIGHT SIDE (Featured Card) -->
-      <div class="hero__card">
-        <div class="card">
-          <h2>Featured: Autonomous Vehicle (Capstone)</h2>
-
-          <p class="muted">
-            3D-printed chassis, 4WD drivetrain, SONAR + IR sensing, and Arduino-based mode control.
-          </p>
-
-          <div class="mediaGrid">
-            <figure class="media">
-              <img src="assets/img/av-01.jpg" alt="Autonomous vehicle prototype photo 1">
-            </figure>
-            <figure class="media">
-              <img src="assets/img/av-02.jpg" alt="Autonomous vehicle prototype photo 2">
-            </figure>
-          </div>
-
-          <div class="videoGrid">
-            <video controls playsinline preload="metadata" poster="assets/img/av-demo-01-poster.jpg">
-              <source src="assets/video/av-demo-01.mp4" type="video/mp4">
-            </video>
-
-            <video controls playsinline preload="metadata" poster="assets/img/av-demo-02-poster.jpg">
-              <source src="assets/video/av-demo-02.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="card__actions">
-            <a class="btn btn--small btn--primary"
-               href="assets/docs/Autonomous-Vehicle-Design.pdf"
-               target="_blank" rel="noopener">
-              View PDF
-            </a>
-          </div>
-
+        <div class="fact">
+          <div class="fact__k">Interests</div>
+          <div class="fact__v">Vehicles • Mechanisms • CAD • Design for Manufacture • Prototyping</div>
         </div>
       </div>
 
+      <!-- LinkedIn card lives ONCE, OUTSIDE quickFacts -->
+      <div class="card linkedinCard">
+        <h3>LinkedIn</h3>
+        <p class="muted small">Click or scan to view my profile.</p>
+
+        <a class="qrLink" href="http://linkedin.com/in/neil-hasenstaub-04b9753a2" target="_blank" rel="noopener">
+          <div class="qrWrap">
+            <img src="assets/img/linkedin-qr.png" alt="LinkedIn QR code">
+          </div>
+        </a>
+      </div>
     </div>
-  </section>
+
+    <!-- RIGHT SIDE (Featured Card) -->
+    <div class="hero__card">
+      <div class="card">
+        <h2>Featured: Autonomous Vehicle (Capstone)</h2>
+        <p class="muted">3D-printed chassis, 4WD drivetrain, SONAR + IR sensing, and Arduino-based mode control.</p>
+
+        <div class="mediaGrid">
+          <figure class="media">
+            <img src="assets/img/av-01.jpg" alt="Autonomous vehicle prototype photo 1">
+          </figure>
+          <figure class="media">
+            <img src="assets/img/av-02.jpg" alt="Autonomous vehicle prototype photo 2">
+          </figure>
+        </div>
+
+        <div class="videoGrid">
+          <video controls playsinline preload="metadata" poster="assets/img/av-demo-01-poster.jpg">
+            <source src="assets/video/av-demo-01.mp4" type="video/mp4">
+          </video>
+
+          <video controls playsinline preload="metadata" poster="assets/img/av-demo-02-poster.jpg">
+            <source src="assets/video/av-demo-02.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="card__actions">
+          <a class="btn btn--small btn--primary" href="assets/docs/Autonomous-Vehicle-Design.pdf" target="_blank" rel="noopener">
+            View PDF
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
     <!-- PROJECTS -->
     <section id="projects" class="section">
       <div class="container">
@@ -376,6 +359,7 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
 
