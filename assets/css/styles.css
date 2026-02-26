@@ -73,6 +73,12 @@ a:hover{ opacity: 0.92; }
   grid-template-columns: 1.1fr 0.9fr;
   gap: 26px;
   align-items: stretch;
+  }
+
+}.hero__copy,
+.hero__card{
+  display:flex;
+  flex-direction: column;
 }
 @media (max-width: 960px){
   .hero__grid{ grid-template-columns: 1fr; }
@@ -200,6 +206,16 @@ h1{
   padding: 16px;
   box-shadow: var(--shadow);
 }
+
+/* LinkedIn bottom alignment */
+.linkedinCard{
+  margin-top: auto;
+}
+
+.hero__card .card{
+  height: 100%;
+}
+
 .card--soft{
   background: rgba(176,149,222,0.08);
   border-color: rgba(176,149,222,0.20);
@@ -462,6 +478,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
