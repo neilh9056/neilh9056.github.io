@@ -210,12 +210,6 @@ h1{
   padding: 16px;
   box-shadow: var(--shadow);
 }
-
-/* LinkedIn bottom alignment */
-.linkedinCard{
-  margin-top: auto;
-}
-
 .hero__card .card{
   height: 100%;
 }
@@ -516,6 +510,7 @@ qrLink{ display:block; color:inherit;
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
