@@ -297,7 +297,7 @@ h1{
   .grid{ grid-template-columns: 1fr; }
 }
 
-  .proj{
+.proj{
   border: 1px solid var(--line);
   background: rgba(255,255,255,0.035);
   border-radius: var(--radius);
@@ -510,6 +510,7 @@ qrLink{ display:block; color:inherit;
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
