@@ -620,6 +620,44 @@ qrLink{ display:block; color:inherit;
   border: 1px solid rgba(176,149,222,0.22);
   background: rgba(176,149,222,0.08);
 }
+/* Clickable Instructor Recognition Glow */
+.quoteLink{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+}
+
+.quoteLink .prof-feedback{
+  position:relative;
+  transition:transform 260ms ease, box-shadow 260ms ease;
+}
+
+.quoteLink:hover .prof-feedback{
+  transform:translateY(-3px);
+  box-shadow:
+    0 18px 38px rgba(0,0,0,0.40),
+    0 0 0 1px rgba(176,149,222,0.25);
+}
+
+.quoteLink .prof-feedback::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:14px;
+  background:
+    radial-gradient(220px 220px at 0% 0%, rgba(176,149,222,0.65), transparent 60%),
+    radial-gradient(220px 220px at 100% 0%, rgba(80,29,131,0.65), transparent 60%),
+    radial-gradient(220px 220px at 0% 100%, rgba(80,29,131,0.65), transparent 60%),
+    radial-gradient(220px 220px at 100% 100%, rgba(176,149,222,0.65), transparent 60%);
+  opacity:0;
+  transition:opacity 260ms ease;
+}
+
+.quoteLink:hover .prof-feedback::before{
+  opacity:1;
+  animation:cornerPulse 2.8s ease-in-out infinite;
+}
 
 .prof-feedback .quote{
   margin: 0 0 6px 0;
@@ -661,6 +699,7 @@ qrLink{ display:block; color:inherit;
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
