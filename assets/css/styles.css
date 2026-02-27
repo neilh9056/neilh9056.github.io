@@ -369,7 +369,7 @@ h1{
 }
 
 /* QR clickable wrapper */
-qrLink{ display:block; color:inherit; }
+qrLink{ display:block; color:inherit; 
 }
 
 /* QR container */
@@ -382,6 +382,8 @@ qrLink{ display:block; color:inherit; }
   place-items:center;
   transition: all 0.25s ease;
   cursor: pointer;
+
+  
 }
 
 /* Hover effect */
@@ -391,12 +393,6 @@ qrLink{ display:block; color:inherit; }
 }
 
 /* QR image */
-.qrWrap img{
-  width: 220px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
 .qrWrap img{
   width: 220px;
   max-width: 100%;
@@ -503,6 +499,7 @@ qrLink{ display:block; color:inherit; }
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
