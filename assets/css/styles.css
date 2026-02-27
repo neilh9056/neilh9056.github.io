@@ -244,6 +244,44 @@ h1{
   object-fit: cover;
   display:block;
 }
+/* ===== Stirling Project Image (Premium Hover) ===== */
+
+.projMediaLink{
+  display:block;
+  margin-top: 12px;
+  border-radius: 14px;
+  color: inherit;
+}
+
+.projMedia{
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(167,180,195,0.18);
+  background: rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.projMedia img{
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.25s ease;
+}
+
+.projMediaLink:hover .projMedia{
+  transform: translateY(-3px);
+  border-color: rgba(176,149,222,0.38);
+  box-shadow:
+    0 18px 36px rgba(0,0,0,0.35),
+    0 0 0 1px rgba(176,149,222,0.18),
+    0 0 22px rgba(176,149,222,0.18);
+}
+
+.projMediaLink:hover .projMedia img{
+  transform: scale(1.02);
+}
 
 .videoGrid{
   display:grid;
@@ -519,6 +557,7 @@ qrLink{ display:block; color:inherit;
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
