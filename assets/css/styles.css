@@ -322,6 +322,15 @@ h1{
   object-fit: cover;
   border-radius: 14px;
 }
+/* Stirling image hover lift effect */
+.projImage{
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.projImage:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
   
 .proj__top h3{
   margin:0;
@@ -510,6 +519,7 @@ qrLink{ display:block; color:inherit;
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
