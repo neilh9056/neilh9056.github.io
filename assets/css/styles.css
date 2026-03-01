@@ -525,7 +525,9 @@ h1{
 }
 
 /* QR clickable wrapper */
-qrLink{ display:block; color:inherit; 
+.qrLink{
+  display:block;
+  color:inherit;
 }
 
 /* QR container */
@@ -744,6 +746,7 @@ qrLink{ display:block; color:inherit;
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
