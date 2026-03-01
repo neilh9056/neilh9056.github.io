@@ -80,24 +80,27 @@
         <p class="muted">3D-printed chassis, 4WD drivetrain, SONAR + IR sensing, and
 mode control using Arduino.</p>
 
-        <div class="mediaGrid">
-          <figure class="media">
-            <img src="assets/img/av-01.jpg" alt="Autonomous vehicle prototype photo 1">
-          </figure>
-          <figure class="media">
-            <img src="assets/img/av-02.jpg" alt="Autonomous vehicle prototype photo 2">
-          </figure>
-        </div>
+      <div class="mediaLayout">
 
-        <div class="videoGrid">
-          <video controls playsinline preload="metadata" poster="assets/img/av-demo-01-poster.jpg">
-            <source src="assets/video/av-demo-01.mp4" type="video/mp4">
-          </video>
+  <!-- LEFT COLUMN -->
+  <div class="leftCol">
+    <video controls playsinline preload="metadata"
+           poster="assets/img/av-demo-01-poster.jpg">
+      <source src="assets/video/av-demo-01.mp4" type="video/mp4">
+    </video>
+  </div>
 
-          <video controls playsinline preload="metadata" poster="assets/img/av-demo-02-poster.jpg">
-            <source src="assets/video/av-demo-02.mp4" type="video/mp4">
-          </video>
-        </div>
+  <!-- RIGHT COLUMN -->
+  <div class="rightCol">
+    <img src="assets/img/av-04.jpg" alt="Autonomous vehicle additional view">
+
+    <video controls playsinline preload="metadata"
+           poster="assets/img/av-demo-02-poster.jpg">
+      <source src="assets/video/av-demo-02.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</div>
 
         <div class="card__actions">
           <a class="btn btn--small btn--primary" href="assets/docs/Autonomous-Vehicle-Design.pdf" target="_blank" rel="noopener">
@@ -381,6 +384,7 @@ mode control using Arduino.</p>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
 
