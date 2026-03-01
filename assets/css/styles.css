@@ -73,6 +73,7 @@ a:hover{ opacity: 0.92; }
   grid-template-columns: 1.1fr 0.9fr;
   gap: 26px;
   align-items: stretch;   /* critical */
+}
   .hero__grid{
   align-items: start;
 }
@@ -748,6 +749,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
