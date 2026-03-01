@@ -72,9 +72,6 @@ a:hover{ opacity: 0.92; }
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 26px;
-  align-items: stretch;   /* critical */
-}
-  .hero__grid{
   align-items: start;
 }
 .hero__copy,
@@ -256,16 +253,7 @@ h1{
   display:block;
   text-decoration:none;
   color:inherit;
-}
 
-.projMedia{
-  position:relative;
-  margin-top:12px;
-  border-radius:14px;
-  overflow:hidden;
-  border:1px solid rgba(167,180,195,0.18);
-  background:rgba(0,0,0,0.20);
-  transition:transform 260ms ease, box-shadow 260ms ease;
 }
 
 .projMedia img{
@@ -749,6 +737,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
