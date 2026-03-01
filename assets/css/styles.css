@@ -172,8 +172,13 @@ h1{
 /* Ghost */
 .btn--ghost{
   background: transparent;
-  border-color: rgba(167,180,195,0.25);
-  color: rgba(255,255,255,0.88);
+  border: 1px solid rgba(176,149,222,0.35);
+  color: rgba(255,255,255,0.92);
+}
+
+.btn--ghost:hover{
+  background: rgba(176,149,222,0.12);
+  border-color: rgba(176,149,222,0.55);
 }
 
 /* Small variant */
@@ -737,6 +742,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
