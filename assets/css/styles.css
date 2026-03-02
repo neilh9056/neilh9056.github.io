@@ -68,21 +68,31 @@ a:hover{ opacity: 0.92; }
 .hero{
   padding: 36px 0 10px;
 }
+
 .hero__grid{
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 26px;
   align-items: start;
 }
-.hero__copy,
-.hero__card{
-  margin-top: -6px;
+
+/* Make left column a vertical flex stack so we can push LinkedIn down */
+.hero__copy{
+  display: flex;
+  flex-direction: column;
 }
 
-/* Push the LinkedIn card to the bottom of the left column */
-.linkedinCard{
-  margin-top: auto;
+/* Do NOT pull the entire hero upward */
+.hero__card{
+  margin-top: 0;
 }
+
+/* Push LinkedIn card toward bottom (optional) */
+.card--linkedin{
+  margin-top: 14px;     /* use this if you just want spacing */
+  /* margin-top: auto;  /* use this if you want it pinned to bottom */
+}
+
 @media (max-width: 960px){
   .hero__grid{ grid-template-columns: 1fr; }
   .nav{ display:none; }
@@ -810,6 +820,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
