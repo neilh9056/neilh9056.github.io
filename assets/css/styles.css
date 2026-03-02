@@ -680,6 +680,12 @@ h1{
   align-items: flex-end; /* aligns bottom edges */
   margin-top: 14px;
 }
+/* PDF button aligned to right edge */
+.pdfTop{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
 
 .leftCol,
 .rightCol{
@@ -820,6 +826,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
