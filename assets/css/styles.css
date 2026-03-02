@@ -66,7 +66,7 @@ a:hover{ opacity: 0.92; }
   box-shadow: 0 10px 25px rgba(80,29,131,0.25);
 }
 .hero{
-  padding: 44px 0 26px;
+  padding: 36px 0 10px;
 }
 .hero__grid{
   display: grid;
@@ -400,7 +400,7 @@ h1{
 }
 
 .section{
-  padding: 46px 0;
+  padding: 32px 0;
 }
 .section--alt{
   background: rgba(255,255,255,0.02);
@@ -810,6 +810,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
