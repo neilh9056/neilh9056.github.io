@@ -593,6 +593,75 @@ h1{
   gap: 10px;
   color: rgba(255,255,255,0.70);
 }
+/* ===== LinkedIn QR Card (shrink-wrap + glow) ===== */
+.card--linkedin{
+  width: fit-content;            /* shrink-wrap the content */
+  max-width: 260px;              /* safety */
+  padding: 14px;                 /* tighter than regular card */
+  border-radius: 18px;
+  border: 1px solid rgba(176,149,222,0.35);
+  background: rgba(176,149,222,0.06);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+.card--linkedin h3{
+  margin: 0 0 6px 0;
+}
+
+.card--linkedin .muted{
+  margin: 0 0 10px 0;
+}
+
+/* Left align inside the split layout */
+.card--linkedin{
+  justify-self: start;
+}
+
+/* Make the QR link/image clean */
+.card--linkedin .qrLink{
+  display: block;
+  width: 220px;                 /* controls QR size */
+  text-decoration: none;
+}
+
+.card--linkedin .qrImg{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Glow effect ON THE CARD OUTLINE */
+.card--linkedin{
+  position: relative;
+  overflow: hidden;
+}
+
+.card--linkedin::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius: 20px;
+  background:
+    radial-gradient(200px 200px at 0% 0%, rgba(176,149,222,0.40), transparent 65%),
+    radial-gradient(220px 220px at 100% 100%, rgba(80,29,131,0.38), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events:none;
+}
+
+/* Hover lift + outline glow */
+.card--linkedin:hover{
+  transform: translateY(-2px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow:
+    0 18px 38px rgba(0,0,0,0.40),
+    0 0 0 1px rgba(176,149,222,0.28);
+}
+
+.card--linkedin:hover::before{
+  opacity: 1;
+}
 /* ===== Autonomous Vehicle Media Layout ===== */
 
 .mediaLayout{
@@ -741,6 +810,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
