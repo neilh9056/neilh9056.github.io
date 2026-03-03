@@ -69,12 +69,36 @@ a:hover{ opacity: 0.92; }
   padding: 36px 0 10px;
 }
 
+/* ===== HERO GRID STRUCTURE (2 rows for alignment) ===== */
 .hero__grid{
-  display: grid;
+  display:grid;
   grid-template-columns: 1.1fr 0.9fr;
+  grid-template-rows: auto auto;
   gap: 26px;
-  align-items: stretch;
+  align-items:start;
 }
+
+/* Row Mapping */
+.hero__copy{
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.hero__card{
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.hero__linkedin{
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.hero__spacer{
+  grid-column: 2;
+  grid-row: 2;
+}
+
 .hero__card{
   display: flex;
 }
@@ -82,12 +106,6 @@ a:hover{ opacity: 0.92; }
   display: flex;
   flex-direction: column;
   height: 100%;
-}
-
-/* Make left column a vertical flex stack so we can push LinkedIn down */
-.hero__copy{
-  display: flex;
-  flex-direction: column;
 }
 
 /* Do NOT pull the entire hero upward */
@@ -102,10 +120,26 @@ a:hover{ opacity: 0.92; }
 }
 
 @media (max-width: 960px){
-  .hero__grid{ grid-template-columns: 1fr; }
+  .hero__grid{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .hero__copy,
+  .hero__card,
+  .hero__linkedin{
+    grid-column: 1;
+  }
+
+  .hero__card{ grid-row: 2; }
+  .hero__linkedin{ grid-row: 3; }
+
+  .hero__spacer{
+    display:none;
+  }
+
   .nav{ display:none; }
 }
-
 .pill{
   display:inline-flex;
   gap: 8px;
@@ -834,6 +868,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
