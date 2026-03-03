@@ -73,7 +73,7 @@ a:hover{ opacity: 0.92; }
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 26px;
-  align-items: start;
+  align-items: stretch;
 }
 
 /* Make left column a vertical flex stack so we can push LinkedIn down */
@@ -826,6 +826,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
