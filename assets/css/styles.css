@@ -75,6 +75,14 @@ a:hover{ opacity: 0.92; }
   gap: 26px;
   align-items: stretch;
 }
+.hero__card{
+  display: flex;
+}
+.hero__card .card{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
 /* Make left column a vertical flex stack so we can push LinkedIn down */
 .hero__copy{
@@ -826,6 +834,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
