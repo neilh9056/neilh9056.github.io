@@ -32,7 +32,9 @@
 <section class="hero">
   <div class="container hero__grid">
 
-    <!-- LEFT SIDE -->
+    <!-- =========================
+         ROW 1 / LEFT: Intro copy
+         ========================= -->
     <div class="hero__copy">
       <p class="pill">Mechanical Engineering • 3rd Year • Seeking a Summer 2026 Internship</p>
       <h1>Neil Hasenstaub</h1>
@@ -59,8 +61,72 @@
           <div class="fact__v">Vehicles • Mechanisms • CAD • Design for Manufacture • Prototyping</div>
         </div>
       </div>
+    </div>
+    <!-- ✅ END hero__copy -->
 
-      <!-- LinkedIn card lives ONCE, OUTSIDE quickFacts -->
+
+    <!-- =========================
+         ROW 1 / RIGHT: Featured
+         ========================= -->
+    <div class="hero__card">
+      <div class="card">
+
+        <h2>Featured: Autonomous Vehicle (Capstone)</h2>
+        <p class="muted">
+          3D-printed chassis, 4WD drivetrain, SONAR + IR sensing, and mode control using Arduino.
+        </p>
+
+        <div class="mediaLayout">
+
+          <!-- LEFT COLUMN -->
+          <div class="leftCol">
+            <!-- Optional: add av-01 / av-02 ABOVE the video if you want -->
+            <!--
+            <img src="assets/img/av-01.jpg" alt="Autonomous vehicle photo 1">
+            <img src="assets/img/av-02.jpg" alt="Autonomous vehicle photo 2">
+            -->
+
+            <video controls playsinline preload="metadata"
+                   poster="assets/img/av-demo-01-poster.jpg">
+              <source src="assets/video/av-demo-01.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="rightCol">
+
+            <div class="pdfTop">
+              <a class="btn btn--small btn--primary"
+                 href="assets/docs/Autonomous-Vehicle-Design.pdf"
+                 target="_blank"
+                 rel="noopener">
+                View PDF
+              </a>
+            </div>
+
+            <img src="assets/img/av-04.jpg" alt="Autonomous vehicle additional view">
+
+            <video controls playsinline preload="metadata"
+                   poster="assets/img/av-demo-02-poster.jpg">
+              <source src="assets/video/av-demo-02.mp4" type="video/mp4">
+            </video>
+          </div>
+          <!-- ✅ END rightCol -->
+
+        </div>
+        <!-- ✅ END mediaLayout -->
+
+      </div>
+      <!-- ✅ END featured .card -->
+    </div>
+    <!-- ✅ END hero__card -->
+
+
+    <!-- =========================
+         ROW 2 / LEFT: LinkedIn
+         (this is what Featured aligns to)
+         ========================= -->
+    <div class="hero__linkedin">
       <div class="card card--linkedin">
         <h3>LinkedIn</h3>
         <p class="muted">Scan or click to view my profile.</p>
@@ -72,57 +138,15 @@
           <img class="qrImg" src="assets/img/linkedin-qr.png" alt="LinkedIn QR code">
         </a>
       </div>
-    </div> <!-- END hero__copy -->
+    </div>
+    <!-- ✅ END hero__linkedin -->
 
-  <!-- RIGHT SIDE (Featured Card) -->
-<div class="hero__card">
-  <div class="card">
+    <!-- ROW 2 / RIGHT: spacer (optional, keeps grid balanced) -->
+    <div class="hero__spacer" aria-hidden="true"></div>
 
-    <h2>Featured: Autonomous Vehicle (Capstone)</h2>
-    <p class="muted">
-      3D-printed chassis, 4WD drivetrain, SONAR + IR sensing, and mode control using Arduino.
-    </p>
-
-    <div class="mediaLayout">
-
-      <!-- LEFT COLUMN -->
-      <div class="leftCol">
-        <video controls playsinline preload="metadata"
-               poster="assets/img/av-demo-01-poster.jpg">
-          <source src="assets/video/av-demo-01.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <!-- RIGHT COLUMN -->
-      <div class="rightCol">
-        
-         <!-- INSERT PDF BUTTON HERE -->
-  <div class="pdfTop">
-    <a class="btn btn--small btn--primary"
-       href="assets/docs/Autonomous-Vehicle-Design.pdf"
-       target="_blank"
-       rel="noopener">
-      View PDF
-    </a>
   </div>
-  <!-- END INSERT -->
-        
-        <img src="assets/img/av-04.jpg" alt="Autonomous vehicle additional view">
-
-        <video controls playsinline preload="metadata"
-               poster="assets/img/av-demo-02-poster.jpg">
-          <source src="assets/video/av-demo-02.mp4" type="video/mp4">
-        </video>
-      </div> <!-- END rightCol -->
-
-    </div><!-- END mediaLayout -->
-
-   </div><!-- END card -->
- 
-  </div> <!-- END hero__card -->
-
-  </div> <!-- END hero__grid -->
-</section>]
+  <!-- ✅ END hero__grid -->
+</section>
     <!-- PROJECTS -->
     <section id="projects" class="section">
       <div class="container">
@@ -395,6 +419,7 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
 
