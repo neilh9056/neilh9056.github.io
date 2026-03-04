@@ -76,36 +76,39 @@
           3D-printed chassis, 4WD drivetrain, SONAR + IR sensing, and mode control using Arduino.
         </p>
 
-        <div class="mediaLayout">
+  <div class="leftCol">
 
-      <!-- LEFT COLUMN -->
-<div class="leftCol">
+  <!-- IMAGE ROW -->
+  <div class="avImageRow">
 
-  <div class="avThumbWrap" id="avThumbWrap">
-    <button class="avThumbBtn" id="avThumbBtn" type="button" aria-label="Open image collage">
-      <img class="avThumb" src="assets/img/av-01.jpg" alt="Autonomous vehicle prototype photo 1">
-    </button>
-
-    <!-- Hover preview collage (small) -->
-    <div class="avHoverCollage" aria-hidden="true">
-      <img src="assets/img/av-02.jpg" alt="Autonomous vehicle collage preview 1">
-      <img src="assets/img/av-04.jpg" alt="Autonomous vehicle collage preview 2">
+    <!-- av-01 -->
+    <div class="avImage">
+      <button class="avThumbBtn" id="avThumbBtn" type="button" aria-label="Open image collage">
+        <img src="assets/img/av-01.jpg" alt="Autonomous vehicle prototype photo 1">
+      </button>
     </div>
-  </div>
 
-  <!-- Click overlay collage (full) -->
-  <div class="avCollageOverlay" id="avCollageOverlay" aria-hidden="true">
-    <div class="avCollageModal" role="dialog" aria-modal="true" aria-label="Autonomous vehicle collage">
-      <button class="avCollageClose" id="avCollageClose" type="button" aria-label="Close collage">×</button>
+    <!-- av-02 + PDF button -->
+    <div class="avImage avImageRight">
 
-      <div class="avCollageGrid">
-        <img src="assets/img/av-02.jpg" alt="Autonomous vehicle collage image 1">
-        <img src="assets/img/av-04.jpg" alt="Autonomous vehicle collage image 2">
+      <div class="pdfOverlay">
+        <a class="btn btn--small btn--primary"
+           href="assets/docs/Autonomous-Vehicle-Design.pdf"
+           target="_blank"
+           rel="noopener">
+          View PDF
+        </a>
       </div>
+
+      <img src="assets/img/av-02.jpg" alt="Autonomous vehicle prototype photo 2">
+
     </div>
+
   </div>
 
-  <video controls playsinline preload="metadata" poster="assets/img/av-demo-01-poster.jpg">
+  <!-- VIDEO -->
+  <video controls playsinline preload="metadata"
+         poster="assets/img/av-demo-01-poster.jpg">
     <source src="assets/video/av-demo-01.mp4" type="video/mp4">
   </video>
 
@@ -441,6 +444,7 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
 
