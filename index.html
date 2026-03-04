@@ -82,7 +82,30 @@
           <div class="leftCol">
             <!-- Optional: add av-01 / av-02 ABOVE the video if you want -->
             <!--
-            <img src="assets/img/av-01.jpg" alt="Autonomous vehicle photo 1">
+            <div class="avThumbWrap" id="avThumbWrap">
+  <!-- The clickable/hovered image -->
+  <button class="avThumbBtn" id="avThumbBtn" type="button" aria-label="Open image collage">
+    <img class="avThumb" src="assets/img/av-01.jpg" alt="Autonomous vehicle prototype photo 1">
+  </button>
+
+  <!-- Hover preview collage (small) -->
+  <div class="avHoverCollage" aria-hidden="true">
+    <img src="assets/img/av-02.jpg" alt="Autonomous vehicle collage preview 1">
+    <img src="assets/img/av-04.jpg" alt="Autonomous vehicle collage preview 2">
+  </div>
+</div>
+
+<!-- Click overlay collage (full) -->
+<div class="avCollageOverlay" id="avCollageOverlay" aria-hidden="true">
+  <div class="avCollageModal" role="dialog" aria-modal="true" aria-label="Autonomous vehicle collage">
+    <button class="avCollageClose" id="avCollageClose" type="button" aria-label="Close collage">×</button>
+
+    <div class="avCollageGrid">
+      <img src="assets/img/av-02.jpg" alt="Autonomous vehicle collage image 1">
+      <img src="assets/img/av-04.jpg" alt="Autonomous vehicle collage image 2">
+    </div>
+  </div>
+</div>
             <img src="assets/img/av-02.jpg" alt="Autonomous vehicle photo 2">
             -->
 
@@ -419,6 +442,7 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
 
