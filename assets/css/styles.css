@@ -719,7 +719,6 @@ h1{
 /* =========================================
    AV IMAGE ROW (av-01 + av-02 + PDF button)
    ========================================= */
-
 .avImageRow{
   display:flex;
   gap:12px;
@@ -738,7 +737,6 @@ h1{
 }
 
 /* PDF button overlay on av-02 */
-
 .pdfOverlay{
   position:absolute;
   top:10px;
@@ -747,10 +745,14 @@ h1{
 }
 
 /* optional hover lift */
-
 .avImage img:hover{
   transform:scale(1.02);
   transition:transform .25s ease;
+}
+
+/* ===== Autonomous Vehicle Media Layout ===== */
+.mediaLayout{
+  ...
 }
 
 /* ===== Autonomous Vehicle Media Layout ===== */
@@ -1038,6 +1040,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
