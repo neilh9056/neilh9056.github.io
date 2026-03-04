@@ -714,6 +714,43 @@ h1{
 .card--linkedin:hover::before{
   opacity: 1;
 }
+
+
+/* ========================================
+   AV COLLAGE (click to open gallery)
+   ======================================== */
+
+.avCollageOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.avCollageOverlay.is-open{
+  display: flex;
+}
+
+.avCollageModal{
+  max-width: 900px;
+  width: 90%;
+}
+
+.avCollageGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.avCollageGrid img{
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 16px;
+}
 /* ===== Autonomous Vehicle Media Layout ===== */
 
 .mediaLayout{
@@ -999,6 +1036,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
