@@ -756,6 +756,137 @@ h1{
     align-items: stretch;
   }
 }
+
+/* ===== AV Hover + Click Collage ===== */
+
+.avThumbWrap{
+  position: relative;
+}
+
+.avThumbBtn{
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
+
+.avThumb{
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid rgba(167,180,195,0.18);
+}
+
+/* Hover preview collage (small) */
+.avHoverCollage{
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 10px;
+
+  width: min(320px, 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+  padding: 10px;
+  border-radius: 16px;
+  border: 1px solid rgba(176,149,222,0.28);
+  background: rgba(10,10,14,0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+  z-index: 5;
+}
+
+.avHoverCollage img{
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(167,180,195,0.18);
+}
+
+/* Show preview on hover */
+.avThumbWrap:hover .avHoverCollage{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Full-screen overlay collage on click */
+.avCollageOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(10px);
+
+  display: none;           /* toggled by JS */
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  z-index: 999;
+}
+
+.avCollageOverlay.is-open{
+  display: flex;
+}
+
+.avCollageModal{
+  width: min(900px, 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(176,149,222,0.28);
+  background: rgba(14,14,18,0.92);
+  box-shadow: 0 22px 60px rgba(0,0,0,0.55);
+  padding: 16px;
+  position: relative;
+}
+
+.avCollageClose{
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid rgba(176,149,222,0.28);
+  background: rgba(176,149,222,0.10);
+  color: rgba(255,255,255,0.9);
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.avCollageGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.avCollageGrid img{
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(167,180,195,0.18);
+}
+
+@media (max-width: 720px){
+  .avCollageGrid{
+    grid-template-columns: 1fr;
+  }
+  .avCollageGrid img{
+    height: 260px;
+  }
+}
 /* Four-Link: Aerospace hook */
 .proj__hook{
   margin: 8px 0 0;
@@ -868,6 +999,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
