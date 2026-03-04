@@ -716,41 +716,43 @@ h1{
 }
 
 
-/* ========================================
-   AV COLLAGE (click to open gallery)
-   ======================================== */
+/* =========================================
+   AV IMAGE ROW (av-01 + av-02 + PDF button)
+   ========================================= */
 
-.avCollageOverlay{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
+.avImageRow{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
 }
 
-.avCollageOverlay.is-open{
-  display: flex;
+.avImage{
+  flex:1;
+  position:relative;
 }
 
-.avCollageModal{
-  max-width: 900px;
-  width: 90%;
+.avImage img{
+  width:100%;
+  border-radius:14px;
+  display:block;
 }
 
-.avCollageGrid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
+/* PDF button overlay on av-02 */
+
+.pdfOverlay{
+  position:absolute;
+  top:10px;
+  right:10px;
+  z-index:5;
 }
 
-.avCollageGrid img{
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  border-radius: 16px;
+/* optional hover lift */
+
+.avImage img:hover{
+  transform:scale(1.02);
+  transition:transform .25s ease;
 }
+
 /* ===== Autonomous Vehicle Media Layout ===== */
 
 .mediaLayout{
@@ -1036,6 +1038,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
