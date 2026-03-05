@@ -309,7 +309,6 @@ h1{
   display:block;
   text-decoration:none;
   color:inherit;
-
 }
 
 .projMedia img{
@@ -586,9 +585,7 @@ h1{
   display:grid;
   place-items:center;
   transition: all 0.25s ease;
-  cursor: pointer;
-
-  
+  cursor: pointer;  
 }
 
 /* Hover effect */
@@ -1049,6 +1046,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
