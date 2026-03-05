@@ -29,39 +29,49 @@
  <main id="top">
 
 <!-- HERO -->
-<section class="hero">
-  <div class="container hero__grid">
+<div class="hero__card">
+  <div class="card featuredCard">
 
-    <!-- =========================
-         ROW 1 / LEFT: Intro copy
-         ========================= -->
-    <div class="hero__copy">
-      <p class="pill">Mechanical Engineering • 3rd Year • Seeking a Summer 2026 Internship</p>
-      <h1>Neil Hasenstaub</h1>
+    <!-- LEFT SIDE (text description) -->
+    <div class="featuredText">
+      <h2>Featured: Autonomous Vehicle (Capstone)</h2>
 
-      <p class="subtitle">
-        Hands-on mechanical engineering student focused on CAD and mechanisms,
-        with experience building functional prototypes, performing analysis,
-        and delivering clear technical documentation.
+      <p class="muted">
+        3D-printed chassis, 4WD drivetrain, SONAR + IR sensing,
+        and mode control using Arduino.
       </p>
 
-      <div class="ctaRow">
-        <a class="btn btn--primary" href="#projects">View Projects</a>
-        <a class="btn btn--accent" href="assets/resume/Neil-Resume.pdf" download>Download Resume (PDF)</a>
-      </div>
-
-      <div class="quickFacts">
-        <div class="fact">
-          <div class="fact__k">Tools</div>
-          <div class="fact__v">SolidWorks • MATLAB • C# + Java • C/C++ (Arduino) • Excel • FEA • GD&amp;T</div>
-        </div>
-
-        <div class="fact">
-          <div class="fact__k">Interests</div>
-          <div class="fact__v">Vehicles • Mechanisms • CAD • Design for Manufacture • Prototyping</div>
-        </div>
+      <div class="pdfTop">
+        <a class="btn btn--small btn--primary"
+           href="assets/docs/Autonomous-Vehicle-Design.pdf"
+           target="_blank" rel="noopener">
+          View PDF
+        </a>
       </div>
     </div>
+
+
+    <!-- RIGHT SIDE (media stack aligned to hero top) -->
+    <div class="featuredMedia">
+
+      <img src="assets/img/av-01.jpg" alt="Autonomous vehicle view 1">
+      <img src="assets/img/av-02.jpg" alt="Autonomous vehicle view 2">
+      <img src="assets/img/av-04.jpg" alt="Autonomous vehicle view 4">
+
+      <video controls playsinline preload="metadata"
+             poster="assets/img/av-demo-01-poster.jpg">
+        <source src="assets/video/av-demo-01.mp4" type="video/mp4">
+      </video>
+
+      <video controls playsinline preload="metadata"
+             poster="assets/img/av-demo-02-poster.jpg">
+        <source src="assets/video/av-demo-02.mp4" type="video/mp4">
+      </video>
+
+    </div>
+
+  </div>
+</div>
     <!-- ✅ END hero__copy -->
 
 
@@ -444,6 +454,7 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
 
