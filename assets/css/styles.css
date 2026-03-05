@@ -752,8 +752,6 @@ h1{
 
 /* ===== Autonomous Vehicle Media Layout ===== */
 
-/* ===== Featured: Autonomous Vehicle (Capstone) ===== */
-
 .featuredCard{
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -765,13 +763,6 @@ h1{
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-/* PDF button aligned right */
-.pdfTop{
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 8px;
 }
 
 /* MEDIA GRID */
@@ -801,47 +792,11 @@ h1{
   margin-bottom:8px;
 }
 
-.featuredCard{
-  display:grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap:18px;
-  align-items:start;
-}
-
-.featuredText{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
-.featuredMedia{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-
-.featuredMedia img:first-child{
-  grid-column:span 2;
-}
-
-.featuredMedia img,
 .featuredMedia video{
   width:100%;
   border-radius:14px;
   border:1px solid rgba(167,180,195,0.18);
   background:rgba(0,0,0,0.35);
-}
-
-.mediaLayout video,
-.mediaLayout img{
-  width: 100%;
-  border-radius: 14px;
-  border: 1px solid rgba(167,180,195,0.18);
-  background: rgba(0,0,0,0.35);
-}
-
-.mediaLayout img{
-  object-fit: cover;
 }
 
 /* Optional: stack vertically on mobile */
@@ -1094,6 +1049,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
