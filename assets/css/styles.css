@@ -751,31 +751,85 @@ h1{
 }
 
 /* ===== Autonomous Vehicle Media Layout ===== */
-.mediaLayout{
-  ...
+
+/* ===== Featured: Autonomous Vehicle (Capstone) ===== */
+
+.featuredCard{
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 18px;
+  align-items: start;
 }
 
-/* ===== Autonomous Vehicle Media Layout ===== */
-
-.mediaLayout{
+.featuredText{
   display: flex;
-  gap: 16px;
-  align-items: flex-end; /* aligns bottom edges */
-  margin-top: 14px;
+  flex-direction: column;
+  gap: 10px;
 }
-/* PDF button aligned to right edge */
+
+/* PDF button aligned right */
 .pdfTop{
   display: flex;
   justify-content: flex-end;
   margin-bottom: 8px;
 }
 
-.leftCol,
-.rightCol{
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+/* MEDIA GRID */
+.featuredMedia{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
+}
+
+/* Large hero image */
+.featuredMedia img:first-child{
+  grid-column: span 2;
+}
+
+.featuredMedia img,
+.featuredMedia video{
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(167,180,195,0.18);
+  background: rgba(0,0,0,0.35);
+}
+
+/* PDF button aligned right */
+.pdfTop{
+  display:flex;
+  justify-content:flex-end;
+  margin-bottom:8px;
+}
+
+.featuredCard{
+  display:grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap:18px;
+  align-items:start;
+}
+
+.featuredText{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.featuredMedia{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.featuredMedia img:first-child{
+  grid-column:span 2;
+}
+
+.featuredMedia img,
+.featuredMedia video{
+  width:100%;
+  border-radius:14px;
+  border:1px solid rgba(167,180,195,0.18);
+  background:rgba(0,0,0,0.35);
 }
 
 .mediaLayout video,
@@ -1040,6 +1094,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
