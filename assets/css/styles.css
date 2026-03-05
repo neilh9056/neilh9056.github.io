@@ -768,6 +768,12 @@ h1{
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
+/* Nested AV image below second video */
+.avNested{
+  grid-column: 2;
+  width: 85%;
+  justify-self: end;
+}
 
 /* Large hero image */
 .featuredMedia img:first-child{
@@ -1046,6 +1052,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
