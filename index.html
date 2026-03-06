@@ -45,13 +45,13 @@
 
       <div class="ctaRow">
         <a class="btn btn--primary" href="#projects">View Projects</a>
-        <a class="btn btn--accent" href="assets/resume/Neil-Resume.pdf" download>Download Resume (PDF)</a>
+        <a class="btn btn--ghost" href="assets/resume/Neil-Resume.pdf" download>Download Resume</a>
       </div>
 
       <div class="quickFacts">
         <div class="fact">
           <div class="fact__k">Tools</div>
-          <div class="fact__v">SolidWorks • MATLAB • C# + Java • C/C++ (Arduino) • Excel • FEA • GD&amp;T</div>
+          <div class="fact__v">SolidWorks • MATLAB • C/C++ (Arduino) • Excel • FEA • GD&amp;T</div>
         </div>
 
         <div class="fact">
@@ -60,7 +60,6 @@
         </div>
       </div>
 
-      <!-- LinkedIn card -->
       <div class="card card--linkedin">
         <h3>LinkedIn</h3>
         <p class="muted">Scan or click to view my profile.</p>
@@ -72,47 +71,73 @@
         </a>
       </div>
     </div>
-    <!-- END hero__copy -->
 
-    <!-- RIGHT SIDE (Featured Card) -->
+    <!-- RIGHT SIDE -->
     <div class="hero__card">
-      <div class="card featuredCard">
+      <section class="avHero card">
+        <div class="avHero__top">
+          <div class="avHero__text">
+            <p class="avHero__eyebrow">Featured Capstone</p>
+            <h2>Autonomous Vehicle Platform</h2>
+            <p class="avHero__summary">
+              Designed and built a sensor-integrated autonomous vehicle with a custom 3D-printed chassis,
+              modular drivetrain, and Arduino-based control logic for obstacle avoidance and line following.
+            </p>
 
-        <div class="featuredText">
-          <h2>Featured: Autonomous Vehicle (Capstone)</h2>
-          <p class="muted">
-            3D-printed chassis, 4WD drivetrain, SONAR + IR sensing,
-            and mode control using Arduino.
-          </p>
+            <div class="avHero__specs">
+              <span>3D-Printed Chassis</span>
+              <span>4WD Drivetrain</span>
+              <span>SONAR + IR Sensors</span>
+              <span>Arduino Control</span>
+            </div>
 
-          <div class="pdfTop">
-            <a class="btn btn--small btn--primary"
-               href="assets/docs/Autonomous-Vehicle-Design.pdf"
-               target="_blank" rel="noopener">
-              View PDF
-            </a>
+            <div class="avHero__actions">
+              <a class="btn btn--small btn--primary"
+                 href="assets/docs/Autonomous-Vehicle-Design.pdf"
+                 target="_blank"
+                 rel="noopener">
+                View PDF
+              </a>
+
+              <a class="btn btn--small btn--ghost"
+                 href="assets/video/av-demo-01.mp4"
+                 target="_blank"
+                 rel="noopener">
+                Watch Demo
+              </a>
+            </div>
+          </div>
+
+          <div class="avHero__visual">
+            <img src="assets/img/av-01.jpg" alt="Autonomous vehicle hero view">
           </div>
         </div>
 
-        <div class="featuredMedia">
-          <img src="assets/img/av-01.jpg" alt="Autonomous vehicle view 1">
-          <img src="assets/img/av-02.jpg" alt="Autonomous vehicle view 2">
+        <div class="avHero__gallery">
+          <figure class="avHero__tile">
+            <img src="assets/img/av-02.jpg" alt="Autonomous vehicle detail view">
+          </figure>
 
-          <video controls playsinline preload="metadata" poster="assets/img/av-demo-01-poster.jpg">
-            <source src="assets/video/av-demo-01.mp4" type="video/mp4">
-          </video>
+          <figure class="avHero__tile">
+            <video controls playsinline preload="metadata" poster="assets/img/av-demo-01-poster.jpg">
+              <source src="assets/video/av-demo-01.mp4" type="video/mp4">
+            </video>
+          </figure>
 
-          <video controls playsinline preload="metadata" poster="assets/img/av-demo-02-poster.jpg">
-            <source src="assets/video/av-demo-02.mp4" type="video/mp4">
-            <img class="avNested" src="assets/img/av-04.jpg" alt="Autonomous vehicle additional view">
-          </video>
+          <figure class="avHero__tile">
+            <img src="assets/img/av-04.jpg" alt="Autonomous vehicle additional view">
+          </figure>
+
+          <figure class="avHero__tile">
+            <video controls playsinline preload="metadata" poster="assets/img/av-demo-02-poster.jpg">
+              <source src="assets/video/av-demo-02.mp4" type="video/mp4">
+            </video>
+          </figure>
         </div>
-      </div>
+      </section>
     </div>
-    <!-- END hero__card -->
 
   </div>
-  <!-- END hero__grid -->
 </section>
  
     <!-- PROJECTS -->
@@ -390,6 +415,7 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
 
