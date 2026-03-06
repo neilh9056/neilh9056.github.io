@@ -542,6 +542,10 @@ h1{
   align-items: stretch;
 }
 
+.avHero{
+  display: flex;
+  flex-direction: column;
+}
 .avHero__eyebrow{
   margin: 0 0 8px;
   font-size: 0.78rem;
@@ -590,9 +594,7 @@ h1{
 }
 
 .avHero__actions{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: none;
 }
 
 /* ===== Premium Hero Vehicle Image ===== */
@@ -600,7 +602,11 @@ h1{
 .avHero__visual{
   position: relative;
 }
-
+.avHero__pdfUnderImage{
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
 .avHero__visual::before{
   content: "";
   position: absolute;
@@ -632,9 +638,12 @@ h1{
 
 .avHero__gallery{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
   margin-top: 18px;
+  width: 100%;
+  max-width: 920px;
+  align-self: center;
 }
 
 .avHero__tile{
@@ -987,6 +996,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
