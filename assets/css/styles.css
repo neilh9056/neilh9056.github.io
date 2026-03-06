@@ -65,80 +65,7 @@ a:hover{ opacity: 0.92; }
   background: linear-gradient(135deg, rgba(80,29,131,0.95), rgba(176,149,222,0.85));
   box-shadow: 0 10px 25px rgba(80,29,131,0.25);
 }
-.hero{
-  padding: 36px 0 10px;
-}
 
-/* ===== HERO GRID STRUCTURE (2 rows for alignment) ===== */
-.hero__grid{
-  display:grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  grid-template-rows: auto auto;
-  gap: 26px;
-  align-items:start;
-}
-
-/* Row Mapping */
-.hero__copy{
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.hero__card{
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.hero__linkedin{
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.hero__spacer{
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.hero__card{
-  display: flex;
-}
-.hero__card .card{
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-/* Do NOT pull the entire hero upward */
-.hero__card{
-  margin-top: 0;
-}
-
-/* Push LinkedIn card toward bottom (optional) */
-.card--linkedin{
-  margin-top: 14px;     /* use this if you just want spacing */
-  /* margin-top: auto;  /* use this if you want it pinned to bottom */
-}
-
-@media (max-width: 960px){
-  .hero__grid{
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-
-  .hero__copy,
-  .hero__card,
-  .hero__linkedin{
-    grid-column: 1;
-  }
-
-  .hero__card{ grid-row: 2; }
-  .hero__linkedin{ grid-row: 3; }
-
-  .hero__spacer{
-    display:none;
-  }
-
-  .nav{ display:none; }
 }
 .pill{
   display:inline-flex;
@@ -449,7 +376,272 @@ h1{
   flex-wrap: wrap;
   margin-top: 12px;
 }
+.hero{
+  padding: 36px 0 18px;
+}
 
+.hero__grid{
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.hero__copy{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hero__card{
+  display: flex;
+}
+
+.hero__card .card{
+  height: 100%;
+}
+
+@media (max-width: 980px){
+  .hero__grid{
+    grid-template-columns: 1fr;
+  }
+
+  .nav{
+    display: none;
+  }
+}
+
+.pill{
+  display:inline-flex;
+  gap: 8px;
+  align-items:center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(176,149,222,0.12);
+  border: 1px solid rgba(176,149,222,0.22);
+  color: rgba(255,255,255,0.86);
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+
+h1{
+  margin: 0 0 10px;
+  font-size: clamp(34px, 4.2vw, 52px);
+  letter-spacing: -0.02em;
+}
+
+.subtitle{
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 62ch;
+}
+
+.ctaRow{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.quickFacts{
+  margin-top: 16px;
+  display:grid;
+  gap: 10px;
+}
+
+.fact{
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+
+.fact__k{
+  color: rgba(255,255,255,0.72);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.fact__v{
+  color: rgba(255,255,255,0.88);
+  margin-top: 2px;
+}
+
+/* ===== LinkedIn QR Card ===== */
+
+.card--linkedin{
+  width: fit-content;
+  max-width: 260px;
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(176,149,222,0.35);
+  background: rgba(176,149,222,0.06);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  position: relative;
+  overflow: hidden;
+  justify-self: start;
+}
+
+.card--linkedin h3{
+  margin: 0 0 6px 0;
+}
+
+.card--linkedin .muted{
+  margin: 0 0 10px 0;
+}
+
+.card--linkedin .qrLink{
+  display: block;
+  width: 220px;
+  text-decoration: none;
+}
+
+.card--linkedin .qrImg{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.card--linkedin::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius: 20px;
+  background:
+    radial-gradient(200px 200px at 0% 0%, rgba(176,149,222,0.40), transparent 65%),
+    radial-gradient(220px 220px at 100% 100%, rgba(80,29,131,0.38), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events:none;
+}
+
+.card--linkedin:hover{
+  transform: translateY(-2px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow:
+    0 18px 38px rgba(0,0,0,0.40),
+    0 0 0 1px rgba(176,149,222,0.28);
+}
+
+.card--linkedin:hover::before{
+  opacity: 1;
+}
+
+/* ===== Tesla-style Autonomous Vehicle Hero ===== */
+
+.avHero{
+  padding: 18px;
+}
+
+.avHero__top{
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.avHero__eyebrow{
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(176,149,222,0.92);
+}
+
+.avHero__text h2{
+  margin: 0 0 10px;
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.avHero__summary{
+  margin: 0 0 14px;
+  color: rgba(255,255,255,0.78);
+  max-width: 38ch;
+}
+
+.avHero__specs{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.avHero__specs span{
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(176,149,222,0.22);
+  background: rgba(176,149,222,0.08);
+  color: rgba(255,255,255,0.86);
+}
+
+.avHero__actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.avHero__visual img{
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid rgba(167,180,195,0.18);
+  background: rgba(0,0,0,0.35);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.28);
+}
+
+.avHero__gallery{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.avHero__tile{
+  margin: 0;
+}
+
+.avHero__tile img,
+.avHero__tile video{
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid rgba(167,180,195,0.18);
+  background: rgba(0,0,0,0.35);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.avHero__tile img:hover,
+.avHero__tile video:hover{
+  transform: translateY(-4px);
+  border-color: rgba(176,149,222,0.35);
+  box-shadow:
+    0 18px 38px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(176,149,222,0.22),
+    0 0 22px rgba(176,149,222,0.16);
+}
+
+@media (max-width: 980px){
+  .avHero__top{
+    grid-template-columns: 1fr;
+  }
+
+  .avHero__gallery{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px){
+  .avHero__gallery{
+    grid-template-columns: 1fr;
+  }
+}
 .section{
   padding: 32px 0;
 }
@@ -642,303 +834,7 @@ h1{
   gap: 10px;
   color: rgba(255,255,255,0.70);
 }
-/* ===== LinkedIn QR Card (shrink-wrap + glow) ===== */
-.card--linkedin{
-  width: fit-content;            /* shrink-wrap the content */
-  max-width: 260px;              /* safety */
-  padding: 14px;                 /* tighter than regular card */
-  border-radius: 18px;
-  border: 1px solid rgba(176,149,222,0.35);
-  background: rgba(176,149,222,0.06);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
-}
 
-.card--linkedin h3{
-  margin: 0 0 6px 0;
-}
-
-.card--linkedin .muted{
-  margin: 0 0 10px 0;
-}
-
-/* Left align inside the split layout */
-.card--linkedin{
-  justify-self: start;
-}
-
-/* Make the QR link/image clean */
-.card--linkedin .qrLink{
-  display: block;
-  width: 220px;                 /* controls QR size */
-  text-decoration: none;
-}
-
-.card--linkedin .qrImg{
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-}
-
-/* Glow effect ON THE CARD OUTLINE */
-.card--linkedin{
-  position: relative;
-  overflow: hidden;
-}
-
-.card--linkedin::before{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  border-radius: 20px;
-  background:
-    radial-gradient(200px 200px at 0% 0%, rgba(176,149,222,0.40), transparent 65%),
-    radial-gradient(220px 220px at 100% 100%, rgba(80,29,131,0.38), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  pointer-events:none;
-}
-
-/* Hover lift + outline glow */
-.card--linkedin:hover{
-  transform: translateY(-2px);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow:
-    0 18px 38px rgba(0,0,0,0.40),
-    0 0 0 1px rgba(176,149,222,0.28);
-}
-
-.card--linkedin:hover::before{
-  opacity: 1;
-}
-
-
-/* =========================================
-   AV IMAGE ROW (av-01 + av-02 + PDF button)
-   ========================================= */
-.avImageRow{
-  display:flex;
-  gap:12px;
-  align-items:flex-start;
-}
-
-.avImage{
-  flex:1;
-  position:relative;
-}
-
-.avImage img{
-  width:100%;
-  border-radius:14px;
-  display:block;
-}
-
-/* PDF button overlay on av-02 */
-.pdfOverlay{
-  position:absolute;
-  top:10px;
-  right:10px;
-  z-index:5;
-}
-
-/* optional hover lift */
-.avImage img:hover{
-  transform:scale(1.02);
-  transition:transform .25s ease;
-}
-
-/* ===== Autonomous Vehicle Media Layout ===== */
-
-.featuredCard{
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 18px;
-  align-items: start;
-}
-
-.featuredText{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* MEDIA GRID */
-.featuredMedia{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-/* Nested AV image below second video */
-.avNested{
-  grid-column: 2;
-  width: 85%;
-  justify-self: end;
-}
-
-/* Large hero image */
-.featuredMedia img:first-child{
-  grid-column: span 2;
-}
-
-.featuredMedia img,
-.featuredMedia video{
-  width: 100%;
-  border-radius: 14px;
-  border: 1px solid rgba(167,180,195,0.18);
-  background: rgba(0,0,0,0.35);
-}
-
-/* PDF button aligned right */
-.pdfTop{
-  display:flex;
-  justify-content:flex-end;
-  margin-bottom:8px;
-}
-
-.featuredMedia video{
-  width:100%;
-  border-radius:14px;
-  border:1px solid rgba(167,180,195,0.18);
-  background:rgba(0,0,0,0.35);
-}
-
-/* Optional: stack vertically on mobile */
-@media (max-width: 768px){
-  .mediaLayout{
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-
-/* ===== AV Hover + Click Collage ===== */
-
-.avThumbWrap{
-  position: relative;
-}
-
-.avThumbBtn{
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  width: 100%;
-  display: block;
-}
-
-.avThumb{
-  width: 100%;
-  display: block;
-  border-radius: 14px;
-  border: 1px solid rgba(167,180,195,0.18);
-}
-
-/* Hover preview collage (small) */
-.avHoverCollage{
-  position: absolute;
-  left: 0;
-  top: 100%;
-  margin-top: 10px;
-
-  width: min(320px, 100%);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-
-  padding: 10px;
-  border-radius: 16px;
-  border: 1px solid rgba(176,149,222,0.28);
-  background: rgba(10,10,14,0.92);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-
-  opacity: 0;
-  transform: translateY(-6px);
-  pointer-events: none;
-  transition: opacity 180ms ease, transform 180ms ease;
-  z-index: 5;
-}
-
-.avHoverCollage img{
-  width: 100%;
-  height: 110px;
-  object-fit: cover;
-  display: block;
-  border-radius: 12px;
-  border: 1px solid rgba(167,180,195,0.18);
-}
-
-/* Show preview on hover */
-.avThumbWrap:hover .avHoverCollage{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Full-screen overlay collage on click */
-.avCollageOverlay{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.72);
-  backdrop-filter: blur(10px);
-
-  display: none;           /* toggled by JS */
-  align-items: center;
-  justify-content: center;
-
-  padding: 20px;
-  z-index: 999;
-}
-
-.avCollageOverlay.is-open{
-  display: flex;
-}
-
-.avCollageModal{
-  width: min(900px, 100%);
-  border-radius: 20px;
-  border: 1px solid rgba(176,149,222,0.28);
-  background: rgba(14,14,18,0.92);
-  box-shadow: 0 22px 60px rgba(0,0,0,0.55);
-  padding: 16px;
-  position: relative;
-}
-
-.avCollageClose{
-  position: absolute;
-  right: 12px;
-  top: 10px;
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  border: 1px solid rgba(176,149,222,0.28);
-  background: rgba(176,149,222,0.10);
-  color: rgba(255,255,255,0.9);
-  cursor: pointer;
-  font-size: 22px;
-  line-height: 1;
-}
-
-.avCollageGrid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.avCollageGrid img{
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  border-radius: 16px;
-  border: 1px solid rgba(167,180,195,0.18);
-}
-
-@media (max-width: 720px){
-  .avCollageGrid{
-    grid-template-columns: 1fr;
-  }
-  .avCollageGrid img{
-    height: 260px;
-  }
 }
 /* Four-Link: Aerospace hook */
 .proj__hook{
@@ -1052,6 +948,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
