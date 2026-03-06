@@ -64,7 +64,6 @@ a:hover{ opacity: 0.92; }
   font-weight: 800;
   background: linear-gradient(135deg, rgba(80,29,131,0.95), rgba(176,149,222,0.85));
   box-shadow: 0 10px 25px rgba(80,29,131,0.25);
-}
 
 }
 .pill{
@@ -531,10 +530,6 @@ h1{
 
 /* ===== Tesla-style Autonomous Vehicle Hero ===== */
 
-.avHero{
-  padding: 18px;
-}
-
 .avHero__top{
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
@@ -883,7 +878,6 @@ h1{
   color: rgba(255,255,255,0.70);
 }
 
-}
 /* Four-Link: Aerospace hook */
 .proj__hook{
   margin: 8px 0 0;
@@ -996,6 +990,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
