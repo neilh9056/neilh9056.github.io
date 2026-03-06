@@ -595,7 +595,25 @@ h1{
   background: rgba(0,0,0,0.35);
   box-shadow: 0 18px 36px rgba(0,0,0,0.28);
 }
+/* ===== Premium Hero Vehicle Image ===== */
 
+.avHero__visual{
+  position: relative;
+}
+
+/* Soft halo glow behind vehicle */
+.avHero__visual::before{
+  content:"";
+  position:absolute;
+  inset:-20px;
+  border-radius:20px;
+
+  background:
+    radial-gradient(380px 220px at 50% 40%,
+      rgba(176,149,222,0.25),
+      transparent 70%);
+
+  filter: blur(
 .avHero__gallery{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -948,6 +966,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
