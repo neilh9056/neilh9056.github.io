@@ -65,7 +65,8 @@ if (lightbox && lightboxImg && lightboxClose) {
 
   // ESC closes
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") close();
+    if (e.key === "Escape" && overlay.classList.contains("is-open")) close();
   });
 })();
+
 
