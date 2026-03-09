@@ -1,4 +1,4 @@
-z:root{
+:root{
   --primary: rgb(80, 29, 131);
   --secondary: rgb(176, 149, 222);
   --accent: rgb(167, 180, 195);
@@ -283,18 +283,6 @@ h1{
   display: none;
 }
 
-/* ===== Premium AV Gallery Strip ===== */
-
-.avHero__gallery{
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 18px;
-  width: 100%;
-  max-width: 920px;
-  align-self: center;
-}
-
 .avHero__tile{
   margin: 0;
   position: relative;
@@ -356,6 +344,7 @@ h1{
     grid-template-columns: 1fr;
   }
 }
+.section{
   padding: 32px 0;
 }
 .section--alt{
@@ -787,6 +776,7 @@ h1{
   background: rgba(176,149,222,0.14);
   border-color: rgba(176,149,222,0.30);
 }
+
 
 
 
