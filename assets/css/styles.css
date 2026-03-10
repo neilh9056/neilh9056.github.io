@@ -71,7 +71,9 @@ a:hover{ opacity: 0.92; }
     0 0 0 1px rgba(176,149,222,0.28),
     0 0 24px rgba(176,149,222,0.18);
 }
-
+.btn:hover{
+  opacity: 1;
+}
 .container{
   width: min(var(--max), calc(100% - 40px));
   margin: 0 auto;
@@ -722,5 +724,6 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
