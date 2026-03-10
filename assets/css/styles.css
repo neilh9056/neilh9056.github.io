@@ -316,15 +316,21 @@ h1{
 }
 
 .avHero__specs span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: 0.8rem;
   font-weight: 700;
   padding: 8px 12px;
   border-radius: 999px;
+
   border: 1px solid rgba(176,149,222,0.25);
   background: rgba(176,149,222,0.08);
   color: rgba(255,255,255,0.88);
-}
 
+  text-align: center;
+}
 .avHero__actions{
   display: none;
 }
@@ -726,6 +732,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
