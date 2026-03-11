@@ -13,7 +13,7 @@ const lightboxPrev = document.getElementById("lightboxPrev");
 const lightboxNext = document.getElementById("lightboxNext");
 
 const galleryImages = Array.from(
-  document.querySelectorAll('.avHero__gallery img[data-lightbox="image"]')
+  document.querySelectorAll('.avHero__gallery img')
 );
 
 let currentImageIndex = 0;
@@ -114,6 +114,7 @@ document.addEventListener("keydown", (event) => {
     if (e.key === "Escape" && overlay.classList.contains("is-open")) close();
   });
 })();
+
 
 
 
