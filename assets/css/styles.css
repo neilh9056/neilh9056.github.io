@@ -409,14 +409,13 @@ h1{
 
 .avHero__gallery{
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, 1fr);   /* 5 tiles in one row */
   gap: 12px;
   margin-top: 18px;
   width: 100%;
-  max-width: 920px;
+  max-width: 100%;
   align-self: center;
 }
-
 .avHero__tile{
   margin: 0;
   position: relative;
@@ -428,7 +427,7 @@ h1{
 .avHero__tile img,
 .avHero__tile video{
   width: 100%;
-  height: 170px;
+  height: 140px;
   object-fit: cover;
   display: block;
   border-radius: 14px;
@@ -779,6 +778,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
