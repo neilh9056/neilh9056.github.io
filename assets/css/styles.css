@@ -96,9 +96,6 @@ a:hover{ opacity: 0.92; }
 .btn:hover{
   opacity:1;
 }
-.btn:hover{
-  opacity: 1;
-}
 
 .container{
   width: min(var(--max), calc(100% - 40px));
@@ -717,12 +714,6 @@ h1{
   background: rgba(176,149,222,0.08);
 }
 /* Clickable Instructor Recognition Glow */
-.quoteLink{
-  display:block;
-  text-decoration:none;
-  color:inherit;
-}
-
 .quoteLink .prof-feedback{
   position:relative;
   transition:transform 260ms ease, box-shadow 260ms ease;
@@ -794,6 +785,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
