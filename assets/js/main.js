@@ -1,7 +1,4 @@
-(() => {
-  const y = document.getElementById("year");
-  if (y) y.textContent = new Date().getFullYear();
-})();
+
 // Footer year
 const yearEl = document.getElementById("year");
 if (yearEl) {
@@ -117,6 +114,7 @@ document.addEventListener("keydown", (event) => {
     if (e.key === "Escape" && overlay.classList.contains("is-open")) close();
   });
 })();
+
 
 
 
