@@ -412,7 +412,7 @@ h1{
 
 .avHero__gallery{
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: 1fr 1fr 1.7fr 1fr 1fr;
   gap: 12px;
   margin-top: 18px;
   width: 100%;
@@ -420,6 +420,10 @@ h1{
   align-self: center;
 }
 
+.avHero__tile:nth-child(3) img,
+.avHero__tile:nth-child(3) video{
+  height: 220px;
+}
 .avHero__tile{
   margin: 0;
   position: relative;
@@ -790,6 +794,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
