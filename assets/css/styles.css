@@ -437,6 +437,13 @@ h1{
   object-fit: cover;
   display: block;
   border-radius: 14px;
+  border: 1px solid rgba(167,180,195,0.18);
+  background: rgba(0,0,0,0.35);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    filter 0.28s ease;
 }
 
 .avHero__tile:hover img,
@@ -771,6 +778,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
