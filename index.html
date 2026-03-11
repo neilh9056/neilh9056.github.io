@@ -111,7 +111,6 @@
 
 <div class="avHero__gallery">
 
-  <!-- Tile 1 -->
   <figure class="avHero__tile">
     <img src="assets/img/av-02.jpg"
          alt="Autonomous vehicle detail view"
@@ -119,7 +118,6 @@
          data-lightbox="image">
   </figure>
 
-  <!-- Tile 2 -->
   <figure class="avHero__tile">
     <img src="assets/img/av-04.jpg"
          alt="Autonomous vehicle additional view"
@@ -127,7 +125,6 @@
          data-lightbox="image">
   </figure>
 
-  <!-- Tile 3 (CENTER FEATURE IMAGE) -->
   <figure class="avHero__tile">
     <img src="assets/img/av-01.jpg"
          alt="Autonomous vehicle main view"
@@ -135,7 +132,6 @@
          data-lightbox="image">
   </figure>
 
-  <!-- Tile 4 -->
   <figure class="avHero__tile">
     <video controls playsinline preload="metadata"
            poster="assets/img/av-demo-01-poster.jpg">
@@ -143,7 +139,6 @@
     </video>
   </figure>
 
-  <!-- Tile 5 -->
   <figure class="avHero__tile">
     <video controls playsinline preload="metadata"
            poster="assets/img/av-demo-02-poster.jpg">
@@ -429,10 +424,20 @@
       </div>
     </footer>
   </main>
-
+  
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Close image viewer">×</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+  <div class="lightbox__stage">
+    <img id="lightboxImage" src="" alt="">
+  </div>
+  <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next image">›</button>
+</div>
+  
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
 
