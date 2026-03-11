@@ -416,7 +416,7 @@ h1{
   gap: 12px;
   margin-top: 18px;
   width: 100%;
-  max-width: 1040px;
+  max-width: 920px;
   align-self: center;
 }
 
@@ -768,6 +768,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
