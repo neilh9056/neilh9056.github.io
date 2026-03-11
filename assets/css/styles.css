@@ -745,6 +745,18 @@ h1{
   opacity:1;
   animation:cornerPulse 4.2s ease-in-out infinite;
 }
+
+
+@keyframes cornerPulse{
+  0%, 100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+  50%{
+    transform: scale(1.02);
+    opacity: 0.85;
+  }
+}
 .prof-feedback .quote{
   margin: 0 0 6px 0;
   font-style: italic;
@@ -785,6 +797,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
