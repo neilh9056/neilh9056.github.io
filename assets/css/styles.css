@@ -409,12 +409,14 @@ h1{
 
 .avHero__gallery{
   display: grid;
-  grid-template-columns: repeat(5, 1fr);   /* 5 tiles in one row */
+  grid-template-columns: repeat(5, 1fr);   /* forces 5 tiles in one row */
   gap: 12px;
   margin-top: 18px;
   width: 100%;
   max-width: 100%;
   align-self: center;
+
+  justify-items: center;   /* CENTER tiles under the hero image */
 }
 .avHero__tile{
   margin: 0;
@@ -778,6 +780,7 @@ h1{
   object-fit: cover;      /* crops instead of stretching */
   display: block;
 }
+
 
 
 
