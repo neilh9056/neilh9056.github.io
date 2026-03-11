@@ -1,90 +1,92 @@
-
 // Footer year
-const yearEl = document.getElementById("year");
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
+(() => {
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+})();
 
 // AV gallery lightbox
-const lightbox = document.getElementById("lightbox");
-const lightboxImage = document.getElementById("lightboxImage");
-const lightboxClose = document.getElementById("lightboxClose");
-const lightboxPrev = document.getElementById("lightboxPrev");
-const lightboxNext = document.getElementById("lightboxNext");
+(() => {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxClose = document.getElementById("lightboxClose");
+  const lightboxPrev = document.getElementById("lightboxPrev");
+  const lightboxNext = document.getElementById("lightboxNext");
 
-const galleryImages = Array.from(
-  document.querySelectorAll('.avHero__gallery img')
-);
+  const galleryImages = Array.from(
+    document.querySelectorAll(".avHero__gallery img")
+  );
 
-let currentImageIndex = 0;
+  if (
+    !lightbox ||
+    !lightboxImage ||
+    !lightboxClose ||
+    !lightboxPrev ||
+    !lightboxNext ||
+    galleryImages.length === 0
+  ) {
+    return;
+  }
 
-function openLightbox(index) {
-  if (!lightbox || !lightboxImage || galleryImages.length === 0) return;
+  let currentImageIndex = 0;
 
-  currentImageIndex = index;
-  const img = galleryImages[currentImageIndex];
+  const updateLightboxImage = () => {
+    const img = galleryImages[currentImageIndex];
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt || "Gallery image";
+  };
 
-  lightboxImage.src = img.src;
-  lightboxImage.alt = img.alt || "Gallery image";
-  lightbox.classList.add("is-open");
-  lightbox.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-}
+  const openLightbox = (index) => {
+    currentImageIndex = index;
+    updateLightboxImage();
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  };
 
-function closeLightbox() {
-  if (!lightbox) return;
+  const closeLightbox = () => {
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  };
 
-  lightbox.classList.remove("is-open");
-  lightbox.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
-}
+  const showNextImage = () => {
+    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+    updateLightboxImage();
+  };
 
-function showNextImage() {
-  if (galleryImages.length === 0) return;
-  currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-  openLightbox(currentImageIndex);
-}
+  const showPrevImage = () => {
+    currentImageIndex =
+      (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    updateLightboxImage();
+  };
 
-function showPrevImage() {
-  if (galleryImages.length === 0) return;
-  currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-  openLightbox(currentImageIndex);
-}
+  galleryImages.forEach((img, index) => {
+    img.addEventListener("click", () => openLightbox(index));
+  });
 
-galleryImages.forEach((img, index) => {
-  img.addEventListener("click", () => openLightbox(index));
-});
-
-if (lightboxClose) {
   lightboxClose.addEventListener("click", closeLightbox);
-}
-
-if (lightboxNext) {
   lightboxNext.addEventListener("click", showNextImage);
-}
-
-if (lightboxPrev) {
   lightboxPrev.addEventListener("click", showPrevImage);
-}
 
-if (lightbox) {
   lightbox.addEventListener("click", (event) => {
     if (event.target === lightbox) {
       closeLightbox();
     }
   });
-}
 
-document.addEventListener("keydown", (event) => {
-  if (!lightbox || !lightbox.classList.contains("is-open")) return;
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox.classList.contains("is-open")) return;
 
-  if (event.key === "Escape") closeLightbox();
-  if (event.key === "ArrowRight") showNextImage();
-  if (event.key === "ArrowLeft") showPrevImage();
-});
-// ===== AV Collage click-to-open =====
+    if (event.key === "Escape") closeLightbox();
+    if (event.key === "ArrowRight") showNextImage();
+    if (event.key === "ArrowLeft") showPrevImage();
+  });
+})();
+
+// AV Collage click-to-open
 (() => {
-  
   const btn = document.getElementById("avThumbBtn");
   const overlay = document.getElementById("avCollageOverlay");
   const closeBtn = document.getElementById("avCollageClose");
@@ -104,18 +106,13 @@ document.addEventListener("keydown", (event) => {
   btn.addEventListener("click", open);
   closeBtn.addEventListener("click", close);
 
-  // Click outside modal closes
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) close();
   });
 
-  // ESC closes
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && overlay.classList.contains("is-open")) close();
+    if (e.key === "Escape" && overlay.classList.contains("is-open")) {
+      close();
+    }
   });
 })();
-
-
-
-
-
