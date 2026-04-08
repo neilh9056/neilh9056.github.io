@@ -46,7 +46,6 @@
       <div class="ctaRow">
         <a class="btn btn--primary" href="#projects">View Projects</a>
         <a class="btn btn--primary" href="assets/resume/Neil-Resume.pdf" download>Download Resume</a>
-        
       </div>
 
       <div class="quickFacts">
@@ -75,11 +74,16 @@
 
     <!-- RIGHT SIDE -->
     <div class="hero__card">
+
       <section class="avHero card">
+
         <div class="avHero__top">
+
+          <!-- TEXT -->
           <div class="avHero__text">
             <p class="avHero__eyebrow">Featured Capstone</p>
             <h2>Autonomous Vehicle Platform</h2>
+
             <p class="avHero__summary">
               Designed and built a sensor-integrated autonomous vehicle with a custom 3D-printed chassis,
               modular drivetrain, and Arduino-based control logic for obstacle avoidance and line following.
@@ -95,57 +99,83 @@
             <div class="avHero__actions"></div>
           </div>
 
-         <div class="avHero__visual">
-  <img src="assets/img/av-01.jpg" alt="Autonomous vehicle hero view">
+          <!-- HERO MEDIA -->
+          <div class="avHero__visual" id="avHeroVisual">
+            <div
+              class="avHero__mediaFrame"
+              id="avHeroMediaFrame"
+              role="button"
+              tabindex="0"
+              aria-label="Reset hero media to default image"
+            >
+              <img
+                id="avHeroMainMedia"
+                class="avHero__mainMedia"
+                src="assets/img/av-01.jpg"
+                alt="Autonomous vehicle hero view"
+              >
+            </div>
 
-  <div class="avHero__pdfUnderImage">
-    <a class="btn btn--small btn--primary"
-       href="assets/docs/Autonomous-Vehicle-Design.pdf"
-       target="_blank"
-       rel="noopener">
-      View PDF
-    </a>
-  </div>
-</div>
+            <div class="avHero__pdfUnderImage">
+              <a
+                class="btn btn--small btn--primary"
+                href="assets/docs/Autonomous-Vehicle-Design.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                View PDF
+              </a>
+            </div>
+          </div>
+
         </div>
 
-<div class="avHero__gallery">
+        <!-- GALLERY -->
+        <div class="avHero__gallery" id="avHeroGallery">
 
-  <figure class="avHero__tile">
-    <img src="assets/img/av-01.jpg"
-         alt="Autonomous vehicle overview"
-         loading="lazy">
-  </figure>
+          <button class="avHero__tile is-active"
+            type="button"
+            data-type="image"
+            data-src="assets/img/av-01.jpg">
+            <img src="assets/img/av-01.jpg" alt="">
+          </button>
 
-  <figure class="avHero__tile">
-    <img src="assets/img/av-02.jpg"
-         alt="Autonomous vehicle detail"
-         loading="lazy">
-  </figure>
+          <button class="avHero__tile"
+            type="button"
+            data-type="image"
+            data-src="assets/img/av-02.jpg">
+            <img src="assets/img/av-02.jpg" alt="">
+          </button>
 
-  <figure class="avHero__tile">
-    <img src="assets/img/av-04.jpg"
-         alt="Autonomous vehicle additional view"
-         loading="lazy">
-  </figure>
+          <button class="avHero__tile"
+            type="button"
+            data-type="image"
+            data-src="assets/img/av-04.jpg">
+            <img src="assets/img/av-04.jpg" alt="">
+          </button>
 
-  <figure class="avHero__tile">
-    <video controls playsinline preload="metadata"
-           poster="assets/img/av-demo-02-poster.jpg">
-      <source src="assets/video/av-demo-02.mp4" type="video/mp4">
-    </video>
-  </figure>
+          <button class="avHero__tile"
+            type="button"
+            data-type="video"
+            data-src="assets/video/av-demo-02.mp4"
+            data-poster="assets/img/av-demo-02-poster.jpg">
+            <img src="assets/img/av-demo-02-poster.jpg" alt="">
+          </button>
 
-  <figure class="avHero__tile">
-    <video controls playsinline preload="metadata"
-           poster="assets/img/av-demo-01-poster.jpg">
-      <source src="assets/video/av-demo-01.mp4" type="video/mp4">
-    </video>
-  </figure>
+          <button class="avHero__tile"
+            type="button"
+            data-type="video"
+            data-src="assets/video/av-demo-01.mp4"
+            data-poster="assets/img/av-demo-01-poster.jpg">
+            <img src="assets/img/av-demo-01-poster.jpg" alt="">
+          </button>
 
-</div>
+        </div>
+
       </section>
+
     </div>
+
   </div>
 </section>
 
