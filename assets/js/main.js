@@ -6,113 +6,86 @@
   }
 })();
 
-// AV gallery lightbox
+// AV hero gallery swap + reset to default image
 (() => {
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImage = document.getElementById("lightboxImage");
-  const lightboxClose = document.getElementById("lightboxClose");
-  const lightboxPrev = document.getElementById("lightboxPrev");
-  const lightboxNext = document.getElementById("lightboxNext");
+  const mediaFrame = document.getElementById("avHeroMediaFrame");
+  const gallery = document.getElementById("avHeroGallery");
 
-  const galleryImages = Array.from(
-    document.querySelectorAll(".avHero__gallery img")
-  );
+  if (!mediaFrame || !gallery) return;
 
-  if (
-    !lightbox ||
-    !lightboxImage ||
-    !lightboxClose ||
-    !lightboxPrev ||
-    !lightboxNext ||
-    galleryImages.length === 0
-  ) {
-    return;
-  }
+  const tiles = Array.from(gallery.querySelectorAll(".avHero__tile"));
+  const defaultSrc = "assets/img/av-01.jpg";
+  const defaultAlt = "Autonomous vehicle hero view";
 
-  let currentImageIndex = 0;
-
-  const updateLightboxImage = () => {
-    const img = galleryImages[currentImageIndex];
-    lightboxImage.src = img.src;
-    lightboxImage.alt = img.alt || "Gallery image";
+  const setActiveTile = (activeTile = null) => {
+    tiles.forEach((tile) => tile.classList.remove("is-active"));
+    if (activeTile) activeTile.classList.add("is-active");
   };
 
-  const openLightbox = (index) => {
-    currentImageIndex = index;
-    updateLightboxImage();
-    lightbox.classList.add("is-open");
-    lightbox.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+  const renderImage = (src, alt) => {
+    mediaFrame.innerHTML = `
+      <img
+        id="avHeroMainMedia"
+        class="avHero__mainMedia"
+        src="${src}"
+        alt="${alt}"
+        data-default-src="${defaultSrc}"
+        data-default-alt="${defaultAlt}"
+      >
+    `;
   };
 
-  const closeLightbox = () => {
-    lightbox.classList.remove("is-open");
-    lightbox.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
+  const renderVideo = (src, poster, alt) => {
+    mediaFrame.innerHTML = `
+      <video
+        id="avHeroMainMedia"
+        class="avHero__heroVideo"
+        controls
+        playsinline
+        preload="metadata"
+        poster="${poster || ""}"
+        aria-label="${alt}"
+      >
+        <source src="${src}" type="video/mp4">
+      </video>
+    `;
   };
 
-  const showNextImage = () => {
-    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-    updateLightboxImage();
-  };
+  tiles.forEach((tile) => {
+    tile.addEventListener("click", (event) => {
+      event.stopPropagation();
 
-  const showPrevImage = () => {
-    currentImageIndex =
-      (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-    updateLightboxImage();
-  };
+      const type = tile.dataset.type;
+      const src = tile.dataset.src;
+      const alt = tile.dataset.alt || "Autonomous vehicle media";
+      const poster = tile.dataset.poster || "";
 
-  galleryImages.forEach((img, index) => {
-    img.addEventListener("click", () => openLightbox(index));
+      if (!src) return;
+
+      if (type === "video") {
+        renderVideo(src, poster, alt);
+      } else {
+        renderImage(src, alt);
+      }
+
+      setActiveTile(tile);
+    });
   });
 
-  lightboxClose.addEventListener("click", closeLightbox);
-  lightboxNext.addEventListener("click", showNextImage);
-  lightboxPrev.addEventListener("click", showPrevImage);
-
-  lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox) {
-      closeLightbox();
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (!lightbox.classList.contains("is-open")) return;
-
-    if (event.key === "Escape") closeLightbox();
-    if (event.key === "ArrowRight") showNextImage();
-    if (event.key === "ArrowLeft") showPrevImage();
-  });
-})();
-
-// AV Collage click-to-open
-(() => {
-  const btn = document.getElementById("avThumbBtn");
-  const overlay = document.getElementById("avCollageOverlay");
-  const closeBtn = document.getElementById("avCollageClose");
-
-  if (!btn || !overlay || !closeBtn) return;
-
-  const open = () => {
-    overlay.classList.add("is-open");
-    overlay.setAttribute("aria-hidden", "false");
+  const resetHeroToDefault = () => {
+    renderImage(defaultSrc, defaultAlt);
+    const defaultTile = tiles.find((tile) => tile.dataset.src === defaultSrc);
+    setActiveTile(defaultTile || null);
   };
 
-  const close = () => {
-    overlay.classList.remove("is-open");
-    overlay.setAttribute("aria-hidden", "true");
-  };
-
-  btn.addEventListener("click", open);
-  closeBtn.addEventListener("click", close);
-
-  overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) close();
+  mediaFrame.addEventListener("click", () => {
+    resetHeroToDefault();
   });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && overlay.classList.contains("is-open")) {
-      close();
+  mediaFrame.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      resetHeroToDefault();
     }
   });
 })();
