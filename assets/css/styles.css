@@ -455,7 +455,73 @@ h1{
   background: transparent;
   appearance: none;
 }
+/* ===== AV TILE BUTTON EFFECT (matches site buttons) ===== */
 
+.avHero__tile{
+  position: relative;
+  border-radius: 14px;
+  border: 1px solid rgba(167,180,195,0.18);
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(255,255,255,0.03);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+/* subtle gradient like buttons */
+.avHero__tile::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(176,149,222,0.12), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 1;
+}
+
+.avHero__tile img{
+  position: relative;
+  z-index: 2;
+}
+
+/* HOVER (like your buttons) */
+.avHero__tile:hover{
+  transform: translateY(-4px);
+  border-color: rgba(176,149,222,0.5);
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(176,149,222,0.2),
+    0 0 20px rgba(176,149,222,0.15);
+}
+
+.avHero__tile:hover::before{
+  opacity: 1;
+}
+
+/* CLICK / PRESS effect */
+.avHero__tile:active{
+  transform: translateY(-1px) scale(0.98);
+  box-shadow:
+    0 6px 14px rgba(0,0,0,0.4),
+    0 0 0 1px rgba(176,149,222,0.15);
+}
+
+/* ACTIVE SELECTED TILE (like primary button state) */
+.avHero__tile.is-active{
+  border-color: rgba(176,149,222,0.6);
+  box-shadow:
+    0 16px 32px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(176,149,222,0.25),
+    0 0 28px rgba(176,149,222,0.2);
+}
+
+.avHero__tile.is-active::before{
+  opacity: 1;
+}
 .avHero__tile img{
   width: 100%;
   height: clamp(95px, 10vw, 150px);
