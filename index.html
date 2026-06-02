@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Mechanical Engineering student portfolio — projects, resume, and contact." />
   <title>Neil Hasenstaub | Mechanical Engineering Portfolio</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/profile.jpg" />
+  <link rel="apple-touch-icon" href="assets/img/profile.jpg" />
+
+  <!-- Social share / Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Neil Hasenstaub | Mechanical Engineering Portfolio" />
+  <meta property="og:description" content="Hands-on mechanical engineering student — CAD, mechanisms, prototyping, and analysis. Projects, resume, and contact." />
+  <meta property="og:image" content="https://neilh9056.github.io/assets/img/av-01.jpg" />
+  <meta property="og:url" content="https://neilh9056.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Neil Hasenstaub | Mechanical Engineering Portfolio" />
+  <meta name="twitter:description" content="Hands-on mechanical engineering student — CAD, mechanisms, prototyping, and analysis." />
+  <meta name="twitter:image" content="https://neilh9056.github.io/assets/img/av-01.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,12 +32,18 @@
       <img src="assets/img/profile.jpg" alt="Neil Hasenstaub profile photo">
     </a>
 
-<nav class="nav">
+<nav class="nav" id="primaryNav">
   <a class="btn btn--small btn--primary" href="#projects">Projects</a>
   <a class="btn btn--small btn--primary" href="#resume">Resume</a>
   <a class="btn btn--small btn--primary" href="#about">About</a>
   <a class="btn btn--small btn--primary" href="#contact">Contact</a>
 </nav>
+
+<button class="nav-toggle" id="navToggle" type="button"
+        aria-label="Toggle navigation menu"
+        aria-controls="primaryNav" aria-expanded="false">
+  <span class="nav-toggle__bars" aria-hidden="true"></span>
+</button>
   </div>
 </header>
 
@@ -96,7 +117,6 @@
               <span>Arduino Control</span>
             </div>
 
-            <div class="avHero__actions"></div>
           </div>
 
           <!-- HERO MEDIA -->
@@ -259,9 +279,6 @@
     <h3>Four-Link Mechanism Analysis</h3>
     <p class="proj__meta">Kinematics &amp; Dynamics of Machinery</p>
 
-    <p class="proj__hook">
-    </p>
-
     <div class="recognition-badge" title="Instructor Recognition">
       <span class="badge-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="16" height="16" focusable="false">
@@ -372,8 +389,6 @@
       <div class="container split">
         <div>
           <h2>Resume</h2>
-          <p class="muted">
-                  </p>
           <div class="ctaRow">
             <a class="btn btn--primary" href="assets/resume/Neil-Resume.pdf" download>Download Resume</a>
            <a class="btn btn--primary" href="assets/resume/Neil-Resume.pdf" target="_blank" rel="noopener">

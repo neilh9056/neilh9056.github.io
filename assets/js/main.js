@@ -6,6 +6,44 @@
   }
 })();
 
+// Mobile nav toggle
+(() => {
+  const toggle = document.getElementById("navToggle");
+  const nav = document.getElementById("primaryNav");
+  if (!toggle || !nav) return;
+
+  const setOpen = (open) => {
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+  };
+
+  toggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    setOpen(!nav.classList.contains("is-open"));
+  });
+
+  // Close after tapping a nav link
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+
+  // Close when clicking outside the menu
+  document.addEventListener("click", (event) => {
+    if (
+      nav.classList.contains("is-open") &&
+      !nav.contains(event.target) &&
+      !toggle.contains(event.target)
+    ) {
+      setOpen(false);
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setOpen(false);
+  });
+})();
+
 // AV hero gallery swap + reset to default image
 (() => {
   const mediaFrame = document.getElementById("avHeroMediaFrame");
