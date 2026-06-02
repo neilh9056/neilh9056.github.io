@@ -674,6 +674,81 @@ h1{
   filter: brightness(1.05);
 }
 
+/* ===== AV Showcase ===== */
+.avShowcase{
+  padding: 0 0 8px;
+}
+/* Grid mirrors the hero so the content sits under the AV gallery (right column) */
+.avShowcase__grid{
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;   /* matches .hero__grid */
+  gap: 24px;
+  margin-top: -231px;                      /* pull up under the thumbnails, leaving a larger gap above the header (desktop) */
+}
+
+/* Stacked + centered beneath the gallery */
+.avShowcase__stack{
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;            /* spacing above the video box = primary button height */
+}
+
+/* Centered section header — same style as the AV hero h2 */
+.avShowcase__intro{
+  width: 100%;
+}
+.avShowcase__title{
+  margin: 0 0 12px;
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+/* Text copy: boxed in the same card form factor as .proj */
+.avShowcase__copy{
+  width: 100%;
+}
+.avShowcase__copy p{
+  color: rgba(255,255,255,0.86);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Video box — same width as the text box (fills the column) */
+.avShowcase__media{
+  width: 100%;
+}
+.avShowcase__frame{
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(167,180,195,0.18);
+  background: rgba(0,0,0,0.35);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.28);
+}
+.avShowcase__video{
+  width: 100%;
+  height: clamp(200px, 22vw, 300px);
+  display: block;
+  object-fit: cover;
+  background: rgba(0,0,0,0.35);
+}
+
+/* Button centered close to the bottom of the video box */
+.avShowcase__actions{
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+@media (max-width: 720px){
+  .avShowcase__grid{ grid-template-columns: 1fr; margin-top: 24px; }   /* reset the desktop pull-up */
+  .avShowcase__stack{ grid-column: 1; }
+}
+
 .section{
   padding: 32px 0;
 }

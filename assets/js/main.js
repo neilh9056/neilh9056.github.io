@@ -44,6 +44,18 @@
   });
 })();
 
+// AV Showcase: play button
+(() => {
+  const btn = document.getElementById("showcasePlayBtn");
+  const video = document.getElementById("showcaseVideo");
+  if (!btn || !video) return;
+
+  btn.addEventListener("click", () => {
+    video.scrollIntoView({ behavior: "smooth", block: "center" });
+    video.play();
+  });
+})();
+
 // AV hero gallery swap + reset to default image
 (() => {
   const mediaFrame = document.getElementById("avHeroMediaFrame");
